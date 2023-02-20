@@ -1,0 +1,21 @@
+.navList {
+  text-decoration: none;
+  list-style: none;
+  padding-inline: 0;
+  text-align: center;
+}
+
+.navItem {
+  text-decoration: none;
+  font-family: var(--ff-secondary);
+  font-size: var(--s2);
+  color: var(--clr-secondary-100);
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  inline-size: min(80vw, 400px);
+}

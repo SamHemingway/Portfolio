@@ -1,41 +1,3 @@
-.icon {
-  background: none;
-  border: none;
-  padding: 0;
-  color: white;
-  display: grid;
-  place-content: center;
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-  outline-offset: 4px;
-}
-
-@media (pointer: coarse) {
-  .icon {
-    position: relative;
-  }
-
-  .icon::after {
-    --tap-increment: -8px;
-    content: "";
-    position: absolute;
-    top: var(--tap-increment);
-    left: var(--tap-increment);
-    right: var(--tap-increment);
-    bottom: var(--tap-increment);
-  }
-}
-
-.svg {
-  height: 2.15em;
-  width: 2.15em;
-}
-
-.line {
-  stroke: var(--clr-primary-200);
-  stroke-width: 0.5em;
-}
-
 .overlay {
   background: hsla(0, 0%, 0%, 0.5);
   backdrop-filter: blur(5px);
@@ -43,46 +5,4 @@
   position: fixed;
   inset: 0;
   inset-block-start: 51px;
-}
-
-.navList {
-  text-decoration: none;
-  list-style: none;
-  padding-inline: 0;
-  text-align: center;
-}
-
-.navItem {
-  text-decoration: none;
-  font-family: var(--ff-secondary);
-  font-size: var(--s2);
-  color: var(--clr-secondary-100);
-}
-
-.content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  inline-size: min(80vw, 400px);
-}
-
-@media (min-width: 768px) {
-  .hamburger {
-    display: none;
-  }
-}
-
-.sr-only:focus {
-  position: inherit;
-  overflow: inherit;
-  clip: inherit;
-  height: auto;
-  width: auto;
-  margin: inherit;
-  padding: inherit;
-  border: inherit;
-  position: inherit;
-  white-space: inherit;
-  word-wrap: inherit;
 }
