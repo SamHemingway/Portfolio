@@ -35,8 +35,8 @@
   );
   --gradient-cta: linear-gradient(
     0deg,
-    var(--clr-primary-300),
-    var(--clr-primary-500)
+    var(--clr-primary-500),
+    var(--clr-primary-300)
   );
 
   /* --------------------------- Defined values --------------------------- */

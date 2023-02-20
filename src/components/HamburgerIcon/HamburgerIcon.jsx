@@ -87,7 +87,7 @@ function HamburgerIcon({ menuIsOpen, toggleHandler, shouldReduceMotion }) {
           animate={animation}
         ></motion.path>
       </motion.svg>
-      <span class="sr-only">Menu</span>
+      <span className="sr-only">Menu</span>
     </Dialog.Trigger>
   );
 }

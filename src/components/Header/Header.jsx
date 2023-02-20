@@ -5,7 +5,6 @@ import IconList from "../IconList";
 import styles from "./Header.module.css";
 
 function Header() {
-  console.log(styles);
   return (
     <div className={styles.wrapper}>
       <nav>

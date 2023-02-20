@@ -7,6 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 function MobileNavigationModal({
   menuIsOpen,
+  setMenuIsOpen,
   toggleHandler,
   shouldReduceMotion,
 }) {
@@ -34,9 +35,12 @@ function MobileNavigationModal({
     <Dialog.Content
       className={styles.content}
       onInteractOutside={toggleHandler}
+      onEscapeKeyDown={() => {
+        setMenuIsOpen(!menuIsOpen);
+      }}
     >
-      <Dialog.Close onClick={toggleHandler}>Close</Dialog.Close>
       <Dialog.Title className="sr-only">Navigation</Dialog.Title>
+
       <motion.ul
         className={`${styles.navList} stack`}
         variants={variantsContent}
@@ -57,6 +61,14 @@ function MobileNavigationModal({
             className={styles.navItem}
           >
             projects
+          </a>
+        </motion.li>
+        <motion.li variants={variantsMenuItems}>
+          <a
+            href="#"
+            className={styles.navItem}
+          >
+            faqs
           </a>
         </motion.li>
         <motion.li variants={variantsMenuItems}>

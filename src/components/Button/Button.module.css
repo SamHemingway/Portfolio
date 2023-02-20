@@ -1,8 +1,23 @@
-.cta {
-  background: var(--gradient-cta);
+.button {
+  border-radius: var(--rad-sm);
+  cursor: pointer;
   text-transform: uppercase;
   font-family: var(--ff-secondary);
   font-weight: var(--fw-bold);
+}
+
+.cta {
+  background: var(--gradient-cta);
+  border: 2px solid var(--clr-primary-700);
+  color: var(--clr-primary-700);
+  transition: transform 0.05s;
+}
+
+.cta:hover,
+.cta:focus {
+  mix-blend-mode: overlay;
+  background-color: white;
+  transform: scale(1.05);
 }
 
 .stretch {

@@ -25,10 +25,17 @@ function HamburgerMenu() {
         />
         <Dialog.Portal>
           <Dialog.Overlay className={styles.overlay} />
+          <Dialog.Close
+            onClick={toggleMenu}
+            className={styles.closeNav}
+          >
+            <span className="sr-only">Close Menu</span>
+          </Dialog.Close>
           <MobileNavigationModal
             menuIsOpen={menuIsOpen}
             toggleHandler={toggleMenu}
             shouldReduceMotion={shouldReduceMotion}
+            setMenuIsOpen={setMenuIsOpen}
           />
         </Dialog.Portal>
       </Dialog.Root>

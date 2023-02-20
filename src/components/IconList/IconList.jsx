@@ -35,11 +35,10 @@ function Socials({ forceVisible = false, iconSize }) {
     >
       {data.map(({ link, src, ariaLabel }, index) => {
         return (
-          <li>
+          <li key={index}>
             <a
               href={link}
               aria-label={ariaLabel}
-              key={index}
             >
               <img
                 src={src}

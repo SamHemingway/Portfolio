@@ -3,13 +3,31 @@
   list-style: none;
   padding-inline: 0;
   text-align: center;
+  font-family: var(--ff-secondary);
+  font-size: var(--s2);
+  font-weight: var(--fw-bold);
+  color: var(--clr-secondary-100);
 }
 
 .navItem {
   text-decoration: none;
-  font-family: var(--ff-secondary);
-  font-size: var(--s2);
   color: var(--clr-secondary-100);
+}
+
+@media (pointer: coarse) {
+  .navItem {
+    position: relative;
+  }
+
+  .navItem::after {
+    --tap-increment: -8px;
+    content: "";
+    position: absolute;
+    top: var(--tap-increment);
+    left: var(--tap-increment);
+    right: var(--tap-increment);
+    bottom: var(--tap-increment);
+  }
 }
 
 .content {
