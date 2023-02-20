@@ -6,7 +6,7 @@ import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <div className={styles.wrapper}>
+    <header className={styles.wrapper}>
       <nav>
         <div className={styles.leftSide}>
           <Logo />
@@ -34,7 +34,7 @@ function Header() {
         </ul>
         <HamburgerMenu />
       </nav>
-    </div>
+    </header>
   );
 }
 

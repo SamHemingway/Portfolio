@@ -14,6 +14,13 @@
   word-wrap: "normal";
 }
 
+/* Wrapper used throughout the app */
+
+.wrapper {
+  inline-size: clamp(343px, 90vw, 1080px);
+  margin-inline: auto;
+}
+
 /* Stack - used for multiple elements on top of each other */
 
 .stack {
