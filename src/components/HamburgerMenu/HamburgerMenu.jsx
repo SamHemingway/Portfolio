@@ -3,7 +3,7 @@ import styles from "./HamburgerMenu.module.css";
 import * as Dialog from "@radix-ui/react-dialog";
 import IconList from "../IconList";
 import Button from "../Button";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 
 function HamburgerMenu() {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
@@ -33,7 +33,7 @@ function HamburgerMenu() {
     end: {
       transition: {
         delayChildren: 0.1,
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -51,7 +51,7 @@ function HamburgerMenu() {
 
   return (
     <>
-      <Dialog.Root>
+      <Dialog.Root key="navigationMenuMobile">
         <Dialog.Trigger
           className={styles.icon}
           onClick={handleOpenMenu}
