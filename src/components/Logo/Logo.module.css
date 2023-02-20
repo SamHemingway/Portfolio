@@ -1,0 +1,6 @@
+.logo {
+  color: white;
+  font-family: var(--ff-secondary);
+  font-size: var(--s1);
+  text-decoration: none;
+}

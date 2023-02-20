@@ -1,0 +1,29 @@
+@import url("reset.css");
+@import url("fonts.css");
+@import url("customProperties.css");
+@import url("layoutPrimitives.css");
+
+/* ---------------------------------------------------------------------- */
+/*                              BASIC STYLING                             */
+/* ---------------------------------------------------------------------- */
+
+body {
+  background: var(--dark-bg);
+  color: var(--dark-content);
+  font-family: var(--ff-primary);
+}
+
+.sam-headshot > *,
+.rupert-headshot > * {
+  width: 250px;
+  filter: drop-shadow(var(--phased-effect-1))
+    drop-shadow(var(--phased-effect-2)) drop-shadow(var(--phased-effect-3));
+}
+
+h3 > svg {
+  width: 1em;
+}
+
+.card__hero-img {
+  width: 100%;
+}

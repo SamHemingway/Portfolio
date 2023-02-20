@@ -1,0 +1,37 @@
+.wrapper {
+  background: linear-gradient(
+    hsla(255, 100%, 100%, 0.05),
+    hsla(255, 100%, 100%, 0)
+  );
+  border-bottom: 1px solid hsla(255, 100%, 100%, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--s-2);
+  inline-size: clamp(343px, 90%, 1080px);
+  margin-inline: auto;
+}
+
+.navBar {
+  display: none;
+  margin: 0;
+}
+
+.navLink,
+.navButton {
+  list-style: none;
+}
+
+.leftSide {
+  display: flex;
+  gap: var(--s0);
+}
+
+@media (min-width: 768px) {
+  .navBar {
+    display: flex;
+  }
+}

@@ -1,0 +1,14 @@
+@function calculateLinearInterpolation($minValue, $maxValue, $minVW: 23.4375, $maxVW: 80) {
+
+  $minValueRem: $minValue * 1rem;
+  $maxValueRem: $maxValue * 1rem;
+  $minVwRem: $minVW * 1rem;
+
+  $slope: calc(($maxValue - $minValue) * calc(100vw - $minVwRem) / ($maxVW - $minVW));
+
+  $result: clamp($minValueRem,
+	  $minValueRem + $slope,
+	  $maxValueRem);
+
+  @return $result;
+}
