@@ -3,6 +3,7 @@
   gap: var(--space-2xs-xs);
   flex-wrap: wrap;
   padding: 0;
+  width: 100%;
 }
 
 .pill {

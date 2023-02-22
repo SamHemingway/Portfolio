@@ -1,20 +1,21 @@
+:root {
+  --hero-margin: 8rem;
+}
+
 .heroWrapper {
   margin-block-start: 5.5rem;
-  display: grid;
-  grid-template-areas:
-    "header headshot"
-    "intro headshotLower"
-    "skills skills";
-  grid-template-columns: 60% 40%;
+  margin-block-end: calc(-1 * var(--hero-margin));
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  align-items: center;
 }
 
 .leadWrapper {
   color: var(--clr-primary-700);
-}
-
-.leadContent {
-  background: var(--clr-secondary-300);
-  color: var(--clr-primary-700);
+  background: var(--gradient-highlight);
+  padding-block-start: var(--hero-margin);
+  padding-block-end: 2rem;
 }
 
 .heroHeader {
@@ -28,15 +29,6 @@
   font-family: var(--ff-secondary);
   line-height: 1em;
   padding-block-end: 0.1em;
-  grid-area: header;
-}
-
-.leadBody {
-  grid-area: intro;
-}
-
-.test {
-  background: var(--clr-secondary-300);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -53,5 +45,15 @@
 @media (min-width: 768px) {
   .heroHeader {
     text-align: left;
+    min-inline-size: 40rem;
+  }
+
+  .heroWrapper {
+    display: block;
+    margin-block-end: 3rem;
+  }
+
+  .leadWrapper {
+    padding-block: 2rem;
   }
 }

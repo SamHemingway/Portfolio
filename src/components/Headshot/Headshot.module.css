@@ -1,10 +1,17 @@
 .headshot {
-  grid-area: headshot;
-  max-block-size: 250px;
-  clear: left;
+  width: clamp(15.625rem, 40vw, 28.125rem);
+  padding-block-end: calc(var(--phase-gap) * 3);
 }
 
 .headshot > * {
   filter: drop-shadow(var(--phased-effect-1))
     drop-shadow(var(--phased-effect-2)) drop-shadow(var(--phased-effect-3));
 }
+
+@media (min-width: 768px) {
+  .headshot {
+    float: right;
+  }
+}
+
+/* className={styles.test} */

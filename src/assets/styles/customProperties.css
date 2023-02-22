@@ -29,7 +29,7 @@
     var(--clr-tertiary-800)
   );
   --gradient-highlight: linear-gradient(
-    90deg,
+    -90deg,
     var(--clr-secondary-100),
     var(--clr-secondary-300)
   );
