@@ -4,7 +4,7 @@ import App from "./App";
 import "./assets/styles/globalStyles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode style={{ scrollbarGutter: "stable" }}>
+  <React.StrictMode>
     <App />
   </React.StrictMode>
 );

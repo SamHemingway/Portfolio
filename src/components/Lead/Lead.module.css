@@ -1,0 +1,11 @@
+.wrapper {
+  position: relative;
+}
+
+.leadBodyWrapper {
+}
+
+.wrapper {
+  background: var(--gradient-highlight);
+  color: var(--clr-primary-700);
+}

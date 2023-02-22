@@ -128,7 +128,7 @@
   --box-shadow-light-bg: 0px 0px 15px hsla(360, 0, 0, 0.15);
   --glow-cta: 0px 0px 25px var(--clr-primary-300);
 
-  --phase-gap: var(--s-1);
+  --phase-gap: clamp(var(--s-2), 1.5vw, var(--s-1));
 
   --phased-effect-1: var(--phase-gap) var(--phase-gap) 0px
     var(--clr-tertiary-800);

@@ -13,13 +13,6 @@ body {
   font-family: var(--ff-primary);
 }
 
-.sam-headshot > *,
-.rupert-headshot > * {
-  width: 250px;
-  filter: drop-shadow(var(--phased-effect-1))
-    drop-shadow(var(--phased-effect-2)) drop-shadow(var(--phased-effect-3));
-}
-
 h3 > svg {
   width: 1em;
 }

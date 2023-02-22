@@ -9,6 +9,9 @@
   inline-size: 100%;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+
+  /* Let's stay on top of the headshot image */
+  z-index: 2;
 }
 
 nav {

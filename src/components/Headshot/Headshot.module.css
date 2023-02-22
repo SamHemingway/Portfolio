@@ -1,0 +1,10 @@
+.headshot {
+  grid-area: headshot;
+  max-block-size: 250px;
+  clear: left;
+}
+
+.headshot > * {
+  filter: drop-shadow(var(--phased-effect-1))
+    drop-shadow(var(--phased-effect-2)) drop-shadow(var(--phased-effect-3));
+}
