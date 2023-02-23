@@ -1,9 +1,10 @@
 .wrapper {
+  --nav-border: 1px solid hsla(255, 100%, 100%, 0.1);
   background: linear-gradient(
     hsla(216, 33%, 16%, 0.8),
     hsla(216, 75%, 8%, 0.8)
   );
-  border-bottom: 1px solid hsla(255, 100%, 100%, 0.1);
+  border-block-end: var(--nav-border);
   position: fixed;
   top: 0;
   inline-size: 100%;
@@ -19,30 +20,18 @@ nav {
   align-items: center;
   inline-size: clamp(343px, 90%, 1080px);
   margin-inline: auto;
-}
-
-.navBar {
-  display: none;
-  margin-block: 0;
-  margin-inline-start: auto;
-  margin-inline-end: 2rem;
-}
-
-.navLink {
-  list-style: none;
-  padding-block: var(--space-2xs-xs);
+  font-size: var(--space-s-m);
+  font-family: var(--ff-secondary);
+  padding-block: 5px;
 }
 
 .leftSide {
   display: flex;
   gap: var(--space-xs-s);
-  padding-block: var(--space-2xs-xs);
 }
 
-@media (min-width: 768px) {
-  .navBar {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-xs-s);
+@media (min-width: 900px) {
+  nav {
+    padding-block: 0;
   }
 }

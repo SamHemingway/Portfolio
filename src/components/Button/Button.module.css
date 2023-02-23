@@ -29,14 +29,14 @@
   width: 100%;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 56.25rem) {
   .letsTalk {
     display: block;
     background: var(--gradient-strong);
     border: none;
     color: var(--clr-primary-700);
     transition: transform 0.1s, filter 0.1s;
-    height: clamp(3.438rem, 1.367vw + 2.781rem, 3.875rem);
+    padding-block: 12px;
   }
 
   .letsTalk:hover,
