@@ -1,25 +1,46 @@
 .button {
-  border-radius: var(--rad-sm);
   cursor: pointer;
   text-transform: uppercase;
   font-family: var(--ff-secondary);
   font-weight: var(--fw-bold);
+  padding-inline: var(--space-s);
+  height: 125%;
 }
 
 .cta {
-  background: var(--gradient-cta);
+  background: var(--gradient-strong);
   border: 2px solid var(--clr-primary-700);
   color: var(--clr-primary-700);
-  transition: transform 0.05s;
+  transition: transform 0.1s, box-shadow 0.1s;
+  border-radius: var(--rad-sm);
+}
+
+.letsTalk {
+  display: none;
 }
 
 .cta:hover,
 .cta:focus {
-  mix-blend-mode: overlay;
-  background-color: white;
   transform: scale(1.05);
+  box-shadow: var(--glow-cta);
 }
 
 .stretch {
   width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .letsTalk {
+    display: block;
+    background: var(--gradient-strong);
+    border: none;
+    color: var(--clr-primary-700);
+    transition: transform 0.1s, filter 0.1s;
+    height: clamp(3.438rem, 1.367vw + 2.781rem, 3.875rem);
+  }
+
+  .letsTalk:hover,
+  .letsTalk:focus {
+    filter: drop-shadow(var(--glow-cta));
+  }
 }

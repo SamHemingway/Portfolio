@@ -22,11 +22,17 @@
 
   /* ------------------------------ Gradients ----------------------------- */
 
-  --gradient-strong: linear-gradient(
+  --gradient-header-bg: linear-gradient(
     90deg,
     var(--clr-tertiary-800),
     var(--clr-tertiary-500),
     var(--clr-tertiary-800)
+  );
+
+  --gradient-strong: linear-gradient(
+    00deg,
+    var(--clr-tertiary-800),
+    var(--clr-tertiary-500)
   );
   --gradient-highlight: linear-gradient(
     -90deg,
@@ -50,18 +56,6 @@
   /*                               Dimensions                               */
   /* ---------------------------------------------------------------------- */
 
-  /* -------------------------------- Scale ------------------------------- */
-
-  --ratio: 1.5;
-  --s-2: calc(var(--s-1) / var(--ratio));
-  --s-1: calc(var(--s0) / var(--ratio));
-  --s0: 1rem;
-  --s1: calc(var(--s0) * var(--ratio));
-  --s2: calc(var(--s1) * var(--ratio));
-  --s3: calc(var(--s2) * var(--ratio));
-  --s4: calc(var(--s3) * var(--ratio));
-  --s5: calc(var(--s4) * var(--ratio));
-
   /* ------------------------------- Spacing ------------------------------ */
 
   /* @link https://utopia.fyi/space/calculator?c=375,16,1.2,1240,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-3xl&g=s,l,xl,12 */
@@ -71,7 +65,7 @@
   --space-xs: clamp(0.75rem, calc(0.75rem + 0vw), 0.75rem);
   --space-s: clamp(1rem, calc(1rem + 0vw), 1rem);
   --space-m: clamp(1.5rem, calc(1.5rem + 0vw), 1.5rem);
-  --space-l: clamp(2rem, calc(2rem + 0vw), 2rem);
+  --space-l: clamp(2rem, calc(2rem + 0vw), 2.5rem);
   --space-xl: clamp(3rem, calc(3rem + 0vw), 3rem);
   --space-2xl: clamp(4rem, calc(4rem + 0vw), 4rem);
   --space-3xl: clamp(6rem, calc(6rem + 0vw), 6rem);
@@ -81,7 +75,7 @@
   --space-2xs-xs: clamp(0.5rem, calc(0.39rem + 0.46vw), 0.75rem);
   --space-xs-s: clamp(0.75rem, calc(0.64rem + 0.46vw), 1rem);
   --space-s-m: clamp(1rem, calc(0.78rem + 0.92vw), 1.5rem);
-  --space-m-l: clamp(1.5rem, calc(1.28rem + 0.92vw), 2rem);
+  --space-m-l: clamp(1.5rem, calc(1.28rem + 0.92vw), 2.5rem);
   --space-l-xl: clamp(2rem, calc(1.57rem + 1.85vw), 3rem);
   --space-xl-2xl: clamp(3rem, calc(2.57rem + 1.85vw), 4rem);
   --space-2xl-3xl: clamp(4rem, calc(3.13rem + 3.7vw), 6rem);
@@ -100,8 +94,8 @@
 
   /* --------------------------- Dynamic sizing --------------------------- */
 
-  --fs-lead-text: clamp(1.2rem, calc(1.04rem + 0.67vw), 1.56rem);
-  --hero-text: clamp(2.49rem, calc(1.91rem + 2.45vw), 3.82rem);
+  --lead-text: var(--space-s-m);
+  --hero-text: var(--space-xl-2xl);
 
   /* ---------------------------- Line heights ---------------------------- */
 
@@ -119,16 +113,17 @@
 
   /* -------------------------------- Radii ------------------------------- */
 
-  --rad-sm: var(--s-1);
-  --rad-md: var(--s0);
+  --rad-xs: var(--space-2xs-xs);
+  --rad-sm: var(--space-s-m);
+  --rad-md: var(--space-m-l);
 
   /* ------------------------------- Shadows ------------------------------ */
 
   --box-shadow-dark-bg: 0px 0px 18px hsla(360, 0, 0, 0.2);
   --box-shadow-light-bg: 0px 0px 15px hsla(360, 0, 0, 0.15);
-  --glow-cta: 0px 0px 25px var(--clr-primary-300);
+  --glow-cta: 0px 0px 10px var(--clr-tertiary-800);
 
-  --phase-gap: clamp(var(--s-2), 1.5vw, var(--s-1));
+  --phase-gap: var(--space-3xs-2xs);
 
   --phased-effect-1: var(--phase-gap) var(--phase-gap) 0px
     var(--clr-tertiary-800);

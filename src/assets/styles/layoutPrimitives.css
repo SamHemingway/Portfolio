@@ -34,48 +34,7 @@
 }
 
 .stack > * + * {
-  margin-block-start: var(--stack-space, var(--s1));
-}
-
-/* Box - used for anything that requires padding on all 4 sides */
-
-.box {
-  padding: var(--s1);
-  /* high contrast modes have no bg-colour. As such, add a transparent border
-  here that only shows up in high contrast mode to maintain usability. */
-  outline: 5px solid transparent;
-  outline-offset: -5px;
-  color: var(--dark-content);
-  background-color: var(--dark-bg);
-}
-
-.box * {
-  color: inherit;
-}
-
-.box.light {
-  color: var(--light-content);
-  background-color: var(--light-bg);
-}
-
-/* Center - used for anything that needs horizontally centering. */
-
-.center {
-  /* override the default box-sizing as content-box makes more sense here. */
-  box-sizing: content-box;
-  margin-inline: auto;
-  max-inline-size: var(--desktop);
-  padding-inline: var(--center-padding);
-}
-
-/* Cluster - used for any elements of differing lengths that are liable to wrap. */
-
-.cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space, 1rem);
-  justify-content: flex-start;
-  align-items: center;
+  margin-block-start: var(--stack-space, var(--space-m-l));
 }
 
 /* Switcher: used for any elements that need to move from a horizontal to 
@@ -102,7 +61,7 @@ vertical layout at a certain threshold */
 
 .cards {
   display: grid;
-  grid-gap: var(--s0);
+  grid-gap: var(--space-xs-s);
 }
 
 @supports (width: min(250px, 100%)) {

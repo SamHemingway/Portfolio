@@ -9,7 +9,6 @@
   inline-size: 100%;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-
   /* Let's stay on top of the headshot image */
   z-index: 2;
 }
@@ -18,28 +17,32 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: var(--s-2);
   inline-size: clamp(343px, 90%, 1080px);
   margin-inline: auto;
 }
 
 .navBar {
   display: none;
-  margin: 0;
+  margin-block: 0;
+  margin-inline-start: auto;
+  margin-inline-end: 2rem;
 }
 
-.navLink,
-.navButton {
+.navLink {
   list-style: none;
+  padding-block: var(--space-2xs-xs);
 }
 
 .leftSide {
   display: flex;
-  gap: var(--s0);
+  gap: var(--space-xs-s);
+  padding-block: var(--space-2xs-xs);
 }
 
 @media (min-width: 768px) {
   .navBar {
     display: flex;
+    align-items: baseline;
+    gap: var(--space-xs-s);
   }
 }

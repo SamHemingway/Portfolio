@@ -19,14 +19,12 @@ function Hero() {
 
   const skills = [
     "HTML5",
-    "CSS",
     "JavaScript",
     "React",
     "Vite",
     "Framer Motion",
     "Radix UI",
     "CSS Modules",
-    "Styled Components",
   ];
 
   return (
@@ -46,23 +44,20 @@ function Hero() {
         </motion.h1>
       </div>
       <article className={styles.leadWrapper}>
-        <div className={`wrapper`}>
-          <h2>It's great to meet you.</h2>
+        <div className="wrapper">
+          <h2 className={styles.leadHeader}>
+            It's great to meet you. I'm Sam!
+          </h2>
           <p>
-            I'm Sam: an experienced SaaS startup salesperson who realised that
-            the most satisfying part of his last role was building{" "}
-            <em>on-brand, accessible and fun</em> custom demo instances with CSS
-            to help my team try and land Fortune 100 companies.
+            An ex-startup salesperson who realised that the most satisfying part
+            of his last role was building <em>on-brand, accessible and fun</em>{" "}
+            custom demo instances with CSS to help my team try and land Fortune
+            100 companies.
           </p>
+          <Pills content={skills} />
         </div>
       </article>
-      <Pills
-        content={skills}
-        style={{
-          inlineSize: "clamp(343px, 90vw, 1080px)",
-          marginInline: "auto",
-        }}
-      />
+      <div className="wrapper"></div>
     </section>
   );
 }

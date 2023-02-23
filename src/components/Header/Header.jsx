@@ -3,6 +3,7 @@ import Logo from "../Logo";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import IconList from "../IconList";
 import styles from "./Header.module.css";
+import Button from "../Button";
 
 function Header() {
   return (
@@ -25,13 +26,8 @@ function Header() {
           >
             <a href="#">projects</a>
           </li>
-          <li
-            role="menuitem"
-            className={styles.navButton}
-          >
-            <button>let's talk</button>
-          </li>
         </ul>
+        <Button variant="letsTalk">let's talk</Button>
         <HamburgerMenu />
       </nav>
     </header>

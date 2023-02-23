@@ -1,6 +1,6 @@
 .wrapper {
   list-style: none;
-  gap: var(--s-1);
+  gap: var(--space-xs-s);
   margin-block: 0;
   align-items: center;
   padding: 0;
@@ -8,17 +8,17 @@
 }
 
 .largeWrapper {
-  gap: var(--s0);
+  gap: var(--space-xs-s);
   justify-content: center;
 }
 
 .icon {
-  height: var(--s1);
+  height: var(--space-s-m);
   border-radius: 2px;
 }
 
 .icon.large {
-  height: var(--s3);
+  height: var(--space-2xl-3xl);
   border-radius: 4px;
 }
 
