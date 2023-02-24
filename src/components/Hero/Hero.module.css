@@ -32,6 +32,14 @@
 }
 
 .leadHeader {
+  font-family: var(--ff-secondary);
+  font-size: var(--space-m-l);
+  margin-block-end: var(--space-xs-s);
+  text-align: center;
+}
+
+.leadBody {
+  margin-block-end: var(--space-s-m);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -45,7 +53,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 56.25rem) {
   .heroHeader {
     text-align: left;
     min-inline-size: 40rem;
@@ -58,5 +66,9 @@
 
   .leadWrapper {
     padding-block: 2rem;
+  }
+
+  .leadHeader {
+    text-align: revert;
   }
 }

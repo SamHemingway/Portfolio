@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   margin-block-start: var(--space-2xs-xs);
+  justify-content: center;
 }
 
 .pill {
@@ -16,4 +17,10 @@
   font-size: var(--space-xs-s);
   font-weight: var(--fw-bold);
   border: 1px solid var(--clr-secondary-500);
+}
+
+@media (min-width: 56.25rem) {
+  .wrapper {
+    justify-content: start;
+  }
 }
