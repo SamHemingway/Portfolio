@@ -32,10 +32,7 @@
 }
 
 .leadHeader {
-  font-family: var(--ff-secondary);
   font-size: var(--space-m-l);
-  margin-block-end: var(--space-xs-s);
-  text-align: center;
 }
 
 .leadBody {
@@ -66,9 +63,5 @@
 
   .leadWrapper {
     padding-block: 2rem;
-  }
-
-  .leadHeader {
-    text-align: revert;
   }
 }

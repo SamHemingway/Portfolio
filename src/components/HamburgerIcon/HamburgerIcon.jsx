@@ -20,10 +20,37 @@ function HamburgerIcon({ menuIsOpen, toggleHandler, shouldReduceMotion }) {
     end: shouldReduceMotion ? undefined : { d: "M23.75 56.25h80", rotate: -45 },
   };
 
+  function handleScrollbarMovement() {
+    // Create a div with a scrollbar
+    const div = document.createElement("div");
+    div.style.width = "50px";
+    div.style.height = "50px";
+    div.style.overflow = "scroll";
+    div.style.position = "absolute";
+    div.style.top = "-9999px";
+    document.body.appendChild(div);
+
+    // Measure the width of the scrollbar
+    const scrollbarWidth = div.offsetWidth - div.clientWidth;
+
+    // Remove the div from the DOM
+    document.body.removeChild(div);
+
+    return scrollbarWidth;
+  }
+
+  const scrollbarWidth = handleScrollbarMovement();
+  console.log(scrollbarWidth);
+
   return (
     <Dialog.Trigger
       className={styles.icon}
       onClick={toggleHandler}
+      style={
+        menuIsOpen && scrollbarWidth
+          ? { position: "relative", right: `${scrollbarWidth}px` }
+          : null
+      }
     >
       <motion.svg
         viewBox="2.5 2.5 95 95"

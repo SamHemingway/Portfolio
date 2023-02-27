@@ -13,10 +13,27 @@ body {
   font-family: var(--ff-primary);
 }
 
+h2 {
+  font-family: var(--ff-secondary);
+  font-size: var(--space-l-xl);
+  margin-block-end: var(--space-xs-s);
+  text-align: center;
+}
+
 h3 > svg {
   width: 1em;
 }
 
 .card__hero-img {
   width: 100%;
+}
+
+@media (min-width: 56.25rem) {
+  h2 {
+    text-align: left;
+  }
+}
+
+section {
+  margin-block-end: var(--space-l-xl);
 }
