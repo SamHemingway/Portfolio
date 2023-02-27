@@ -4,17 +4,6 @@ import { Disclosure as Card } from "@headlessui/react";
 import Parser from "html-react-parser";
 
 function CardDeck({ data }) {
-  const [collapsed, setCollapsed] = React.useState(true);
-
-  function checkInnerWidth() {
-    window.innerWidth > 785 ? setCollapsed(false) : setCollapsed(true);
-  }
-
-  React.useEffect(() => {
-    checkInnerWidth();
-    window.addEventListener("resize", checkInnerWidth);
-  }, []);
-
   const plusIcon = (
     <svg
       viewBox="0 0 100 100"
@@ -60,6 +49,8 @@ function CardDeck({ data }) {
       ></path>
     </svg>
   );
+  const [expanded, setExpanded] = React.useState(window.innerWidth > 785);
+
   return (
     <ul className={styles.deck}>
       {data.map((item, index) => {
@@ -68,14 +59,16 @@ function CardDeck({ data }) {
             as="li"
             key={index}
             className={styles.card}
-            defaultOpen
+            defaultOpen={expanded}
           >
             {({ open }) => {
               const icon = open ? minusIcon : plusIcon;
               return (
                 <>
-                  <Card.Button className={styles.cardTitle}>
-                    {`Collapsed: ${collapsed}`}
+                  <Card.Button
+                    className={`${styles.cardTitle} ${styles[item.id]}`}
+                  >
+                    {item.title}
                     {icon}
                   </Card.Button>
                   <Card.Panel className={styles.cardBody}>

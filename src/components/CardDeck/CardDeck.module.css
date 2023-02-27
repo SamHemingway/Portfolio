@@ -10,7 +10,7 @@
 }
 
 .cardTitle {
-  background: var(--clr-tertiary-500);
+  background-color: var(--clr-tertiary-500);
   width: 100%;
   text-align: left;
   color: var(--clr-primary-700);
@@ -24,6 +24,7 @@
   justify-content: space-between;
   align-items: center;
   border-radius: var(--rad-xs);
+  background-size: 4rem;
 }
 
 .cardTitle[data-headlessui-state="open"] {
@@ -50,4 +51,24 @@
 
 .iconLine {
   stroke-linecap: round;
+}
+
+.curious {
+  background-image: url("../../assets/icons/curious-pattern.svg");
+}
+
+.autonomous {
+  background-image: url("../../assets/icons/autonomous-pattern.svg");
+}
+.coachable {
+  background-image: url("../../assets/icons/coachable-pattern.svg");
+}
+.meticulous {
+  background-image: url("../../assets/icons/meticulous-pattern.svg");
+}
+.empathetic {
+  background-image: url("../../assets/icons/empathetic-pattern.svg");
+}
+.forward {
+  background-image: url("../../assets/icons/forward-pattern.svg");
 }

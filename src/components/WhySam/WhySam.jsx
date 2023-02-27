@@ -26,7 +26,7 @@ function WhySam() {
       title: "empathetic",
       content:
         "<p>I've worked on projects with multiple stakeholders who all have their own agendas.</p><p>If you hire me, when the designer Slacks me to say the padding isn't quite right in that feature, I'll appreciate that I work with people who take such pride in their work and make sure they feel heard.</p>",
-      title: "empathetic",
+      id: "empathetic",
     },
     {
       title: "forward thinking",
