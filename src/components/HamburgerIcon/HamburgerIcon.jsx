@@ -4,20 +4,20 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
 
 function HamburgerIcon({ menuIsOpen, toggleHandler, shouldReduceMotion }) {
-  let animation = menuIsOpen ? "end" : undefined;
+  let animation = menuIsOpen ? "open" : "closed";
 
   const variantsBox = {
-    end: !shouldReduceMotion ? undefined : { fill: "white" },
+    open: !shouldReduceMotion ? undefined : { fill: "white" },
   };
 
   const variantsLine1 = {
-    end: shouldReduceMotion ? undefined : { d: "M25 45h80M20", rotate: 45 },
+    open: shouldReduceMotion ? undefined : { d: "M 25 25 L 75 75" },
   };
   const variantsLine2 = {
-    end: shouldReduceMotion ? undefined : { opacity: 0 },
+    open: shouldReduceMotion ? undefined : { opacity: 0 },
   };
   const variantsLine3 = {
-    end: shouldReduceMotion ? undefined : { d: "M23.75 56.25h80", rotate: -45 },
+    open: shouldReduceMotion ? undefined : { d: "M 25 75 L 75 25" },
   };
 
   function handleScrollbarMovement() {
@@ -40,7 +40,6 @@ function HamburgerIcon({ menuIsOpen, toggleHandler, shouldReduceMotion }) {
   }
 
   const scrollbarWidth = handleScrollbarMovement();
-  console.log(scrollbarWidth);
 
   return (
     <Dialog.Trigger
@@ -92,14 +91,14 @@ function HamburgerIcon({ menuIsOpen, toggleHandler, shouldReduceMotion }) {
         ></motion.rect>
         <motion.path
           className={styles.line}
-          d="M20 30h60M20"
+          d="M 20 30 L 80 30"
           strokeLinecap="round"
           variants={variantsLine1}
           animate={animation}
         ></motion.path>
         <motion.path
           className={styles.line}
-          d="M20 50h60M20"
+          d="M 20 50 L 80 50"
           strokeLinecap="round"
           variants={variantsLine2}
           transition={{ duration: 0.1 }}
@@ -108,7 +107,7 @@ function HamburgerIcon({ menuIsOpen, toggleHandler, shouldReduceMotion }) {
         ></motion.path>
         <motion.path
           className={styles.line}
-          d="M20 70h60"
+          d="M 20 70 L 80 70"
           strokeLinecap="round"
           variants={variantsLine3}
           animate={animation}

@@ -5,6 +5,7 @@ import IconList from "../IconList";
 import styles from "./Header.module.css";
 import Button from "../Button";
 import NavLinks from "../NavLinks/";
+import { motion } from "framer-motion";
 
 function Header() {
   const navItems = [
@@ -13,8 +14,31 @@ function Header() {
     { text: "FAQs", id: "faqs" },
   ];
 
+  const variants = {
+    start: {
+      opacity: 0,
+      y: -50,
+    },
+    finish: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 1,
+        type: "spring",
+        stiffness: 50,
+      },
+    },
+  };
+
   return (
-    <header className={styles.wrapper}>
+    <motion.header
+      className={styles.wrapper}
+      variants={window.scrollY === 0 && variants}
+      initial="start"
+      animate="finish"
+    >
       <nav>
         <div className={styles.leftSide}>
           <Logo />
@@ -24,7 +48,7 @@ function Header() {
         <Button variant="letsTalk">let's talk</Button>
         <HamburgerMenu />
       </nav>
-    </header>
+    </motion.header>
   );
 }
 

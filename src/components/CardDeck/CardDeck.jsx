@@ -57,9 +57,9 @@ function CardDeck({ data }) {
         return (
           <Card
             as="li"
-            key={index}
+            key={item.id}
             className={styles.card}
-            defaultOpen={expanded}
+            defaultOpen={expanded ? true : index > 0 ? false : true}
           >
             {({ open }) => {
               const icon = open ? minusIcon : plusIcon;

@@ -5,7 +5,7 @@ import Headshot from "../Headshot";
 import Pills from "../Pills";
 
 function Hero() {
-  const variants = {
+  const variantsHeader = {
     start: {
       opacity: 0,
     },
@@ -36,7 +36,7 @@ function Hero() {
         />
         <motion.h1
           className={styles.heroHeader}
-          variants={variants}
+          variants={variantsHeader}
           initial="start"
           animate="end"
         >
