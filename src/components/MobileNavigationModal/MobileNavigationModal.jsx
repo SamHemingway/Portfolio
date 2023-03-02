@@ -3,14 +3,13 @@ import styles from "./MobileNavigationModal.module.css";
 import * as Dialog from "@radix-ui/react-dialog";
 import IconList from "../IconList";
 import Button from "../Button";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
-function MobileNavigationModal({
-  menuIsOpen,
-  setMenuIsOpen,
-  toggleHandler,
-  shouldReduceMotion,
-}) {
+import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+
+function MobileNavigationModal({ menuIsOpen, setMenuIsOpen, toggleHandler }) {
+  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+
   const variantsContent = {
     end: {
       transition: {
@@ -44,7 +43,7 @@ function MobileNavigationModal({
       <motion.ul
         className={`${styles.navList} stack`}
         variants={variantsContent}
-        initial="start"
+        initial={shouldReduceMotion ? null : "start"}
         animate="end"
       >
         <motion.li variants={variantsMenuItems}>

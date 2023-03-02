@@ -2,44 +2,32 @@ import React from "react";
 import styles from "./HamburgerIcon.module.css";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
+import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import useScrollbarWidth from "../../hooks/useScrollbarWidth";
 
-function HamburgerIcon({ menuIsOpen, toggleHandler, shouldReduceMotion }) {
+function HamburgerIcon({ menuIsOpen, toggleHandler }) {
+  const shouldReduceMotion = React.useContext(ReducedMotionContext);
   let animation = menuIsOpen ? "open" : "closed";
 
   const variantsBox = {
-    open: !shouldReduceMotion ? undefined : { fill: "white" },
+    open: !shouldReduceMotion ? undefined : { fill: "black" },
   };
 
   const variantsLine1 = {
-    open: shouldReduceMotion ? undefined : { d: "M 25 25 L 75 75" },
+    open: shouldReduceMotion
+      ? undefined
+      : { d: "M 25 25 L 75 75", stroke: "white" },
   };
   const variantsLine2 = {
     open: shouldReduceMotion ? undefined : { opacity: 0 },
   };
   const variantsLine3 = {
-    open: shouldReduceMotion ? undefined : { d: "M 25 75 L 75 25" },
+    open: shouldReduceMotion
+      ? undefined
+      : { d: "M 25 75 L 75 25", stroke: "white" },
   };
 
-  function handleScrollbarMovement() {
-    // Create a div with a scrollbar
-    const div = document.createElement("div");
-    div.style.width = "50px";
-    div.style.height = "50px";
-    div.style.overflow = "scroll";
-    div.style.position = "absolute";
-    div.style.top = "-9999px";
-    document.body.appendChild(div);
-
-    // Measure the width of the scrollbar
-    const scrollbarWidth = div.offsetWidth - div.clientWidth;
-
-    // Remove the div from the DOM
-    document.body.removeChild(div);
-
-    return scrollbarWidth;
-  }
-
-  const scrollbarWidth = handleScrollbarMovement();
+  const scrollbarWidth = useScrollbarWidth();
 
   return (
     <Dialog.Trigger

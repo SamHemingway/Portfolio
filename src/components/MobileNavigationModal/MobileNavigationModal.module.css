@@ -35,5 +35,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  inline-size: min(80vw, 375px);
+  inline-size: 100%;
+  padding-inline: 20vw;
 }

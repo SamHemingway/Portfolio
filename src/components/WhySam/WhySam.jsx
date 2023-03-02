@@ -44,7 +44,7 @@ function WhySam() {
 
   return (
     <section
-      className="wrapper"
+      className={`wrapper ${styles.wrapper}`}
       aria-label="Why hire sam?"
     >
       <h2 style={{ textAlign: "left" }}>sam is...</h2>

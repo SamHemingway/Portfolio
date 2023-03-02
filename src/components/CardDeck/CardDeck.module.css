@@ -9,8 +9,13 @@
   list-style: none;
 }
 
-.cardTitle {
+.cardTitleBG {
   background-color: var(--clr-tertiary-500);
+  background-size: 4rem;
+  border-radius: var(--rad-xs);
+}
+
+.cardTitle {
   width: 100%;
   text-align: left;
   color: var(--clr-primary-700);
@@ -24,11 +29,11 @@
   justify-content: space-between;
   align-items: center;
   border-radius: var(--rad-xs);
-  background-size: 4rem;
-  background-position-y: 1em;
+  line-height: 0;
+  background: transparent;
 }
 
-.cardTitle[data-headlessui-state="open"] {
+.cardTitleBG:has(.cardTitle[data-headlessui-state="open"]) {
   border-radius: var(--rad-xs) var(--rad-xs) 0 0;
 }
 
@@ -47,6 +52,7 @@
   stroke-width: 0.6em;
   stroke: var(--clr-primary-700);
   height: 2.5em;
+  position: relative;
 }
 
 .iconCircle {

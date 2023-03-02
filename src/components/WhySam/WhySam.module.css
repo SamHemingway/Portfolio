@@ -1,4 +1,18 @@
-.deck {
-  background-color: white;
-  display: grid;
+@keyframes sectionFade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  animation: sectionFade both;
+  animation-duration: 1.5s;
+  animation-delay: 1.2s;
+  animation-timing-function: linear;
 }

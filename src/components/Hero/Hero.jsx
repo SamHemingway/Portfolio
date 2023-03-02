@@ -1,11 +1,30 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import Headshot from "../Headshot";
 import Pills from "../Pills";
+import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
-function Hero() {
+import useScrollbarWidth from "../../hooks/useScrollbarWidth";
+
+function Hero({ menuIsOpen }) {
+  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const scrollbarWidth = useScrollbarWidth();
+
   const variantsHeader = {
+    start: {
+      opacity: 0,
+    },
+    end: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
+  const variantsLead = {
     start: {
       opacity: 0,
     },
@@ -13,6 +32,14 @@ function Hero() {
       opacity: 1,
       transition: {
         duration: 1,
+        delay: 1,
+      },
+    },
+    endReducedMotion: {
+      opacity: 1,
+      transition: {
+        duration: 0,
+        delay: 0,
       },
     },
   };
@@ -20,16 +47,16 @@ function Hero() {
   const skills = [
     "HTML5",
     "JavaScript",
+    "CSS",
     "React",
     "Vite",
     "Framer Motion",
-    "Radix UI",
-    "CSS Modules",
+    "Styled Components",
   ];
 
   return (
     <section>
-      <div className={`${styles.heroWrapper} wrapper`}>
+      <div className={`wrapper ${styles.heroWrapper}`}>
         <Headshot
           subject="sam"
           altText="A stylised cariacuture of Sam smiling warmly."
@@ -37,13 +64,18 @@ function Hero() {
         <motion.h1
           className={styles.heroHeader}
           variants={variantsHeader}
-          initial="start"
+          initial={shouldReduceMotion ? null : "start"}
           animate="end"
         >
           hire a jnr frontend developer with a growth mindset
         </motion.h1>
       </div>
-      <article className={styles.leadWrapper}>
+      <motion.article
+        className={styles.leadWrapper}
+        variants={variantsLead}
+        initial={shouldReduceMotion ? null : "start"}
+        animate={shouldReduceMotion ? "endReducedMotion" : "end"}
+      >
         <div className="wrapper">
           <h2 className={styles.leadHeader}>
             It's <em>great</em> to meet you. I'm&nbsp;Sam!
@@ -56,7 +88,7 @@ function Hero() {
           </p>
           <Pills content={skills} />
         </div>
-      </article>
+      </motion.article>
       <div className="wrapper"></div>
     </section>
   );

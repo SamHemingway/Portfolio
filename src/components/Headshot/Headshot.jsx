@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./Headshot.module.css";
-import { motion } from "framer-motion";
+import { distance, motion } from "framer-motion";
+import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+
 function Headshot({ subject, altText }) {
+  const distanceToShift = window.innerWidth * 0.05;
   const variants = {
     start: {
       opacity: 0,
-      x: 50,
-      y: 50,
+      x: distanceToShift,
+      y: distanceToShift,
     },
     end: {
       opacity: 1,
@@ -14,18 +17,20 @@ function Headshot({ subject, altText }) {
       y: 0,
       transition: {
         duration: 1,
-        delay: 1,
+        delay: 2,
         type: "spring",
         stiffness: 50,
       },
     },
   };
 
+  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+
   return (
     <motion.picture
       className={styles.headshot}
       variants={variants}
-      initial="start"
+      initial={shouldReduceMotion ? null : "start"}
       animate="end"
     >
       <source
