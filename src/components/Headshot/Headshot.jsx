@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Headshot.module.css";
 import { distance, motion } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function Headshot({ subject, altText }) {
   const distanceToShift = window.innerWidth * 0.05;
@@ -24,7 +24,7 @@ function Headshot({ subject, altText }) {
     },
   };
 
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const { shouldReduceMotion } = React.useContext(AnimationContext);
 
   return (
     <motion.picture

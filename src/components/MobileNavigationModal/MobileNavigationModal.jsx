@@ -5,10 +5,10 @@ import IconList from "../IconList";
 import Button from "../Button";
 import { motion } from "framer-motion";
 
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function MobileNavigationModal({ menuIsOpen, setMenuIsOpen, toggleHandler }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const { shouldReduceMotion } = React.useContext(AnimationContext);
 
   const variantsContent = {
     end: {

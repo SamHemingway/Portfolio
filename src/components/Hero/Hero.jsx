@@ -3,13 +3,11 @@ import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
 import Headshot from "../Headshot";
 import Pills from "../Pills";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
-import useScrollbarWidth from "../../hooks/useScrollbarWidth";
-
-function Hero({ menuIsOpen }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
-  const scrollbarWidth = useScrollbarWidth();
+function Hero() {
+  const { shouldReduceMotion, revealTimer } =
+    React.useContext(AnimationContext);
 
   const variantsHeader = {
     start: {
@@ -19,7 +17,7 @@ function Hero({ menuIsOpen }) {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 1,
+        duration: 0.5,
       },
     },
   };

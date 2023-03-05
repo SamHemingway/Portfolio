@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./HamburgerIcon.module.css";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 import useScrollbarWidth from "../../hooks/useScrollbarWidth";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function HamburgerIcon({ menuIsOpen, toggleHandler }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const { shouldReduceMotion } = React.useContext(AnimationContext);
   let animation = menuIsOpen ? "open" : "closed";
 
   const variantsBox = {
