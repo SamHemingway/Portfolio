@@ -7,6 +7,11 @@
 /*                              BASIC STYLING                             */
 /* ---------------------------------------------------------------------- */
 
+*:focus {
+  outline: 5px solid var(--clr-tertiary-800);
+  outline-offset: 3px;
+}
+
 html {
   scroll-padding-block-start: 4rem;
   scroll-behavior: smooth;

@@ -30,12 +30,15 @@ function Socials({ forceVisible = false, iconSize }) {
       : styles.wrapper;
   return (
     <ul
-      className={`${wrapperStyles}`}
+      className={wrapperStyles}
       style={inlineStyles}
     >
       {data.map(({ link, src, ariaLabel }, index) => {
         return (
-          <li key={index}>
+          <li
+            key={index}
+            className={styles.test}
+          >
             <a
               href={link}
               aria-label={ariaLabel}

@@ -48,7 +48,7 @@
 
 .cardWrapper:focus-within {
   outline: 5px solid var(--clr-tertiary-800);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .card > * {

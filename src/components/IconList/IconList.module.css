@@ -17,6 +17,11 @@
   border-radius: 2px;
 }
 
+.test:focus-within {
+  outline: 3px solid var(--clr-tertiary-800);
+  outline-offset: 5px;
+}
+
 .icon.large {
   height: var(--space-2xl-3xl);
   border-radius: 4px;
