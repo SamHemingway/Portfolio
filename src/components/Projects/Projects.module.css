@@ -1,0 +1,11 @@
+.projectsWrapper {
+  color: var(--clr-primary-700);
+  background: var(--gradient-highlight);
+  padding-block: var(--space-s-m);
+}
+
+@media (min-width: 48rem) {
+  .heading {
+    margin-block-end: var(--space-m-l);
+  }
+}

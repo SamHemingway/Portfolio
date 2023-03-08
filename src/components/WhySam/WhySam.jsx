@@ -1,5 +1,5 @@
 import React from "react";
-import CardDeck from "../CardDeck/CardDeck";
+import CollapsibleCardDeck from "../CollapsibleCardDeck";
 import styles from "./WhySam.module.css";
 
 function WhySam() {
@@ -46,9 +46,10 @@ function WhySam() {
     <section
       className={`wrapper ${styles.wrapper}`}
       aria-label="Why hire sam?"
+      id="why"
     >
       <h2 style={{ textAlign: "left" }}>sam is...</h2>
-      <CardDeck data={traits} />
+      <CollapsibleCardDeck data={traits} />
     </section>
   );
 }

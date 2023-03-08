@@ -29,7 +29,8 @@
   background: var(--gradient-highlight);
   padding-block-start: var(--hero-margin);
   padding-block-end: 2rem;
-  inline-size: 100%;
+  position: relative;
+  z-index: -1;
 }
 
 .leadHeader {

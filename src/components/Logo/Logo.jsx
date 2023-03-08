@@ -3,7 +3,7 @@ import styles from "./Logo.module.css";
 function Logo({ menuIsOpen }) {
   return (
     <a
-      href="/"
+      href="#"
       aria-label="Home"
       className={styles.logo}
       // fix for a really weird bug where logo shifted when menu was opened up

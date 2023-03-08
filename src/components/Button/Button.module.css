@@ -4,7 +4,11 @@
   font-family: var(--ff-secondary);
   font-weight: var(--fw-bold);
   padding-inline: var(--space-s);
-  height: 125%;
+}
+
+.button a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .cta {

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Headshot.module.css";
-import { distance, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
 function Headshot({ subject, altText }) {
@@ -18,8 +18,6 @@ function Headshot({ subject, altText }) {
       transition: {
         duration: 1,
         delay: 2,
-        type: "spring",
-        stiffness: 50,
       },
     },
   };

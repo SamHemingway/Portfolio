@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import WhySam from "./components/WhySam";
+import Projects from "./components/Projects";
 
 import ReducedMotionProvider from "./contexts/ReducedMotionProvider";
 
@@ -17,6 +18,7 @@ function App() {
       <main>
         <Hero menuIsOpen={menuIsOpen} />
         <WhySam />
+        <Projects />
       </main>
     </ReducedMotionProvider>
   );

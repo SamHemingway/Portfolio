@@ -57,19 +57,6 @@ vertical layout at a certain threshold */
   flex-basis: 100%;
 }
 
-/* Cards - self-explanatory */
-
-.cards {
-  display: grid;
-  grid-gap: var(--space-xs-s);
-}
-
-@supports (width: min(250px, 100%)) {
-  .cards {
-    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  }
-}
-
 /* Icons */
 
 .icon {

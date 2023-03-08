@@ -1,10 +1,13 @@
 import React from "react";
-import styles from "./CardDeck.module.css";
+import styles from "./CollapsibleCardDeck.module.css";
 import { Disclosure as Card } from "@headlessui/react";
 import Parser from "html-react-parser";
 import { motion } from "framer-motion";
+import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
-function CardDeck({ data }) {
+function CollapsibleCardDeck({ data }) {
+  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+
   const [expanded, setExpanded] = React.useState(window.innerWidth > 785);
 
   const variantsTitle = {
@@ -13,13 +16,21 @@ function CardDeck({ data }) {
       transition: { duration: "0.75", ease: "easeOut" },
     },
 
-    hover: { backgroundPosition: "1.5em 1em" },
+    hover: {
+      backgroundPosition: shouldReduceMotion ? "1em 0em" : "1em 1em",
+      backgroundColor: "hsla(33, 99%, 75%, 1)",
+    },
+
+    tap: {
+      backgroundPosition: shouldReduceMotion ? "1em 0em" : "1em 1.5em",
+      backgroundColor: "hsla(33, 99%, 75%, 1)",
+    },
   };
 
   const variantsIcon = {
     start: { scale: 1, transition: { duration: "0.75", ease: "easeOut" } },
-    hover: { scale: 1.15 },
-    tap: { scale: 0.9 },
+    hover: { scale: shouldReduceMotion ? 1 : 1.05 },
+    tap: { scale: shouldReduceMotion ? 1 : 0.95 },
   };
 
   const variantsPanel = {
@@ -28,7 +39,7 @@ function CardDeck({ data }) {
   };
 
   const variantsPanelText = {
-    start: { y: -20, opacity: 0 },
+    start: { y: shouldReduceMotion ? 0 : -20, opacity: 0 },
     end: { y: 0, opacity: 1 },
   };
 
@@ -47,10 +58,12 @@ function CardDeck({ data }) {
                 <>
                   <motion.div
                     variants={variantsTitle}
-                    whileHover="hover"
                     whileTap="tap"
+                    whileFocus="hover"
+                    whileHover="hover"
                     animate="start"
                     className={`${styles.cardTitleBG} ${styles[item.id]}`}
+                    tabIndex={-1}
                   >
                     <Card.Button className={styles.cardTitle}>
                       {item.title}
@@ -60,9 +73,14 @@ function CardDeck({ data }) {
                         initial="start"
                         animate="start"
                         whileHover="hover"
+                        whileFocus="hover"
                         whileTap="tap"
+                        tabIndex={-1}
                       >
-                        <ExpandIcon open={open} />
+                        <ExpandIcon
+                          open={open}
+                          shouldReduceMotion={shouldReduceMotion}
+                        />
                       </motion.div>
                     </Card.Button>
                   </motion.div>
@@ -92,7 +110,15 @@ function CardDeck({ data }) {
   );
 }
 
-function ExpandIcon({ open }) {
+function ExpandIcon({ open, shouldReduceMotion }) {
+  function iconAnimation() {
+    if (open) {
+      return shouldReduceMotion ? { opacity: 0 } : { d: "M 50 50 L 50 50" };
+    }
+
+    return { d: "M 50 30 L 50 70", opacity: 1 };
+  }
+
   return (
     <motion.svg
       viewBox="0 0 100 100"
@@ -111,12 +137,11 @@ function ExpandIcon({ open }) {
       ></motion.path>
       <motion.path
         className={styles.iconLine}
-        animate={open ? { d: "M 50 50 L 50 50" } : { d: "M 50 30 L 50 70" }}
-        // transition={{ type: "tween" }}
+        animate={iconAnimation()}
         d="M 50 30 L 50 70"
       ></motion.path>
     </motion.svg>
   );
 }
 
-export default CardDeck;
+export default CollapsibleCardDeck;

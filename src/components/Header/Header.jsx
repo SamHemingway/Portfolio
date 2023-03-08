@@ -11,15 +11,15 @@ import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 function Header({ menuIsOpen, setMenuIsOpen }) {
   const shouldReduceMotion = React.useContext(ReducedMotionContext);
   const navItems = [
-    { text: "why sam", id: "why" },
-    { text: "projects", id: "projects" },
-    { text: "FAQs", id: "faqs" },
+    { text: "why sam", id: "#why" },
+    { text: "projects", id: "#projects" },
+    { text: "FAQs", id: "#faqs" },
   ];
 
   const variants = {
     start: {
       opacity: 0,
-      y: -50,
+      y: shouldReduceMotion ? 0 : -50,
     },
     finish: {
       opacity: 1,
@@ -29,7 +29,7 @@ function Header({ menuIsOpen, setMenuIsOpen }) {
         duration: 1,
         delay: 1,
         type: "spring",
-        stiffness: 50,
+        stiffness: 100,
       },
     },
   };
