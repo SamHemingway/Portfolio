@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./Headshot.module.css";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
-function Headshot({ subject, altText }) {
+function Headshot({ subject, altText, shouldDelay }) {
+  const ref = React.useRef();
+
+  const isInView = useInView(ref, { once: true });
+
   const distanceToShift = window.innerWidth * 0.05;
   const variants = {
     start: {
@@ -17,7 +21,7 @@ function Headshot({ subject, altText }) {
       y: 0,
       transition: {
         duration: 1,
-        delay: 2,
+        delay: shouldDelay ? 2 : 0,
       },
     },
   };
@@ -29,7 +33,8 @@ function Headshot({ subject, altText }) {
       className={styles.headshot}
       variants={variants}
       initial={shouldReduceMotion ? null : "start"}
-      animate="end"
+      animate={isInView ? "end" : "start"}
+      ref={ref}
     >
       <source
         srcSet={`src/assets/images/${subject}.avif`}

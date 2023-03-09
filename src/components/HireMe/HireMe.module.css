@@ -1,0 +1,11 @@
+.sectionIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 56.25rem) {
+  .sectionIntro {
+    display: inherit;
+  }
+}

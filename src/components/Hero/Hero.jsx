@@ -60,6 +60,7 @@ function Hero({ menuIsOpen }) {
         <Headshot
           subject="sam"
           altText="A stylised cariacuture of Sam smiling warmly."
+          shouldDelay
         />
         <motion.h1
           className={styles.heroHeader}
