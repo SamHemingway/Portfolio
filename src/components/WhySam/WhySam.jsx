@@ -1,5 +1,6 @@
 import React from "react";
 import CollapsibleCardDeck from "../CollapsibleCardDeck";
+import SlideIntoView from "../SlideIntoView";
 import styles from "./WhySam.module.css";
 
 function WhySam() {
@@ -43,14 +44,18 @@ function WhySam() {
   ];
 
   return (
-    <section
-      className={`wrapper ${styles.wrapper}`}
-      aria-label="Why hire sam?"
-      id="why"
-    >
-      <h2 style={{ textAlign: "left" }}>sam is...</h2>
-      <CollapsibleCardDeck data={traits} />
-    </section>
+    <SlideIntoView id="why">
+      <div
+        className={`wrapper ${styles.wrapper}`}
+        aria-label="Why hire sam?"
+      >
+        <h2>sam is...</h2>
+        <CollapsibleCardDeck
+          data={traits}
+          cardsOpen={3}
+        />
+      </div>
+    </SlideIntoView>
   );
 }
 

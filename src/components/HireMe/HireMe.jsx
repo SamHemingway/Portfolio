@@ -1,35 +1,95 @@
 import React from "react";
 import styles from "./HireMe.module.css";
 import Headshot from "../Headshot";
+import SlideIntoView from "../SlideIntoView";
+import { motion } from "framer-motion";
+import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { PopupButton } from "react-calendly";
+import Button from "../Button";
 
 function HireMe() {
+  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+
+  const variantsHeader = {
+    start: {
+      opacity: 0,
+    },
+    end: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
+  const variantsLead = {
+    start: {
+      opacity: 0,
+    },
+    end: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 3,
+      },
+    },
+    endReducedMotion: {
+      opacity: 1,
+      transition: {
+        duration: 0,
+        delay: 3,
+      },
+    },
+  };
   return (
-    <section className="wrapper">
-      <div className={styles.sectionIntro}>
-        <h2 className={styles.header}>
-          hire me so I can afford treats for rupert.
-        </h2>
+    <SlideIntoView id="hire">
+      <div className={`wrapper ${styles.heroWrapper}`}>
         <Headshot
           subject="rupert"
           altText="A stylised cariacuture of Sam's handsome dog, Rupert, waiting patiently for treats."
+          shouldDelay
         />
+        <motion.h2
+          className={styles.heroHeader}
+          variants={variantsHeader}
+          initial={shouldReduceMotion ? null : "start"}
+          animate="end"
+        >
+          hire me so I can buy more treats for rupert.
+        </motion.h2>
       </div>
-      <article>
-        <p>
-          That's right, I'm not above taking advantage of the fact that my dog
-          is <em>outrageously handsome</em> to try and snag a job.
-        </p>
-        <p>I'd be happy to tell you more about him (and me). You can:</p>
-        <button>Book a meeting</button>
-        <button>Connect on LinkedIn</button>
-        <button>Email me</button>
-        <p>
-          Alternatively, walk into any Montréal pub showing Premier League
-          football and look for the big guy who sounds like Jon Snow: 50/50 shot
-          that's me.
-        </p>
-      </article>
-    </section>
+      <motion.article
+        className={styles.leadWrapper}
+        variants={variantsLead}
+        initial={shouldReduceMotion ? null : "start"}
+        animate={shouldReduceMotion ? "endReducedMotion" : "end"}
+      >
+        <div className={`wrapper ${styles.content}`}>
+          <p className={styles.content}>
+            That's right, I'm not above taking advantage of the fact that my dog
+            is <em>outrageously handsome</em> to try and snag a job.
+          </p>
+          <p>I'd be happy to tell you more about him (and me).</p>
+          <Button
+            variant="cta"
+            size="large"
+          >
+            <PopupButton
+              url="https://calendly.com/hemingway/hiresam"
+              rootElement={document.getElementById("root")}
+              text="Let's talk"
+              styles={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                textTransform: "uppercase",
+              }}
+            />
+          </Button>
+        </div>
+      </motion.article>
+    </SlideIntoView>
   );
 }
 

@@ -5,7 +5,7 @@ import Parser from "html-react-parser";
 import { motion } from "framer-motion";
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
-function CollapsibleCardDeck({ data, singleColumn = false }) {
+function CollapsibleCardDeck({ data, doubleColumn = false, cardsOpen }) {
   const shouldReduceMotion = React.useContext(ReducedMotionContext);
 
   const [expanded, setExpanded] = React.useState(window.innerWidth > 785);
@@ -43,15 +43,23 @@ function CollapsibleCardDeck({ data, singleColumn = false }) {
     end: { y: 0, opacity: 1 },
   };
 
+  function handleOpenCards(index) {
+    if (expanded) return index < cardsOpen ? true : false;
+    if (!expanded) {
+      if (cardsOpen) return index < cardsOpen ? true : false;
+      return false;
+    }
+  }
+
   return (
-    <ul className={`${styles.deck} ${singleColumn && styles.deckSingle}`}>
+    <ul className={`${styles.deck} ${doubleColumn && styles.deckDouble}`}>
       {data.map((item, index) => {
         return (
           <Card
             as="li"
             key={item.id}
             className={styles.card}
-            defaultOpen={expanded ? true : index > 1 ? false : true}
+            defaultOpen={handleOpenCards(index)}
           >
             {({ open }) => {
               return (

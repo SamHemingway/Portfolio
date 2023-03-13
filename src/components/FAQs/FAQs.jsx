@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./FAQs.module.css";
 import CollapsibleCardDeck from "../CollapsibleCardDeck";
+import SlideIntoView from "../SlideIntoView";
 
 function FAQs() {
   const questions = [
@@ -116,16 +116,15 @@ function FAQs() {
   ];
 
   return (
-    <section
-      className="wrapper"
-      id="faqs"
-    >
-      <h2>faqs</h2>
-      <CollapsibleCardDeck
-        data={questions}
-        singleColumn
-      />
-    </section>
+    <SlideIntoView id="faqs">
+      <div className="wrapper">
+        <h2>faqs</h2>
+        <CollapsibleCardDeck
+          data={questions}
+          doubleColumn
+        />
+      </div>
+    </SlideIntoView>
   );
 }
 

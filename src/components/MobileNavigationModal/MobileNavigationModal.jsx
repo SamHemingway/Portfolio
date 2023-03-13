@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import IconList from "../IconList";
 import Button from "../Button";
 import { motion } from "framer-motion";
+import { PopupButton } from "react-calendly";
 
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
@@ -107,7 +108,17 @@ function MobileNavigationModal({ menuIsOpen, setMenuIsOpen, toggleHandler }) {
               variant="cta"
               stretch={true}
             >
-              <a href="#talk">let's talk</a>
+              <PopupButton
+                url="https://calendly.com/hemingway/hiresam"
+                rootElement={document.getElementById("root")}
+                text="Let's talk"
+                styles={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  textTransform: "uppercase",
+                }}
+              />
             </Button>
           </motion.li>
         </Dialog.Close>

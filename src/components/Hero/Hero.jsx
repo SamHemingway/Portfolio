@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 import Headshot from "../Headshot";
 import Pills from "../Pills";
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import SlideIntoView from "../SlideIntoView";
 
-import useScrollbarWidth from "../../hooks/useScrollbarWidth";
-
-function Hero({ menuIsOpen }) {
+function Hero() {
   const shouldReduceMotion = React.useContext(ReducedMotionContext);
-  const scrollbarWidth = useScrollbarWidth();
 
   const variantsHeader = {
     start: {
@@ -32,14 +30,14 @@ function Hero({ menuIsOpen }) {
       opacity: 1,
       transition: {
         duration: 1,
-        delay: 1,
+        delay: 3,
       },
     },
     endReducedMotion: {
       opacity: 1,
       transition: {
         duration: 0,
-        delay: 0,
+        delay: 3,
       },
     },
   };
@@ -55,7 +53,7 @@ function Hero({ menuIsOpen }) {
   ];
 
   return (
-    <section>
+    <SlideIntoView>
       <div className={`wrapper ${styles.heroWrapper}`}>
         <Headshot
           subject="sam"
@@ -90,8 +88,7 @@ function Hero({ menuIsOpen }) {
           <Pills content={skills} />
         </div>
       </motion.article>
-      <div className="wrapper"></div>
-    </section>
+    </SlideIntoView>
   );
 }
 

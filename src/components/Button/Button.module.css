@@ -11,6 +11,10 @@
   color: inherit;
 }
 
+.large {
+  font-size: 150%;
+}
+
 .cta {
   background: var(--gradient-strong);
   border: 2px solid var(--clr-primary-700);

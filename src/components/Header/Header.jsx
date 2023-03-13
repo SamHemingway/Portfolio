@@ -7,6 +7,7 @@ import Button from "../Button";
 import NavLinks from "../NavLinks/";
 import { motion } from "framer-motion";
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { PopupButton } from "react-calendly";
 
 function Header({ menuIsOpen, setMenuIsOpen }) {
   const shouldReduceMotion = React.useContext(ReducedMotionContext);
@@ -27,7 +28,7 @@ function Header({ menuIsOpen, setMenuIsOpen }) {
       y: 0,
       transition: {
         duration: 1,
-        delay: 1,
+        delay: 3,
         type: "spring",
         stiffness: 100,
       },
@@ -47,7 +48,19 @@ function Header({ menuIsOpen, setMenuIsOpen }) {
           <IconList />
         </div>
         <NavLinks data={navItems} />
-        <Button variant="letsTalk">let's talk</Button>
+        <Button variant="letsTalk">
+          <PopupButton
+            url="https://calendly.com/hemingway/hiresam"
+            rootElement={document.getElementById("root")}
+            text="Let's talk"
+            styles={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              textTransform: "uppercase",
+            }}
+          />
+        </Button>
         <HamburgerMenu
           menuIsOpen={menuIsOpen}
           setMenuIsOpen={setMenuIsOpen}
