@@ -1,8 +1,0 @@
-# Ignore mac files
-*.DS_Store
-
-# Ignore figma files
-*.fig
-
-# Ignore md files
-*.md
