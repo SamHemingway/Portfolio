@@ -34,56 +34,83 @@ function MobileNavigationModal({ menuIsOpen, setMenuIsOpen, toggleHandler }) {
     <Dialog.Content
       className={styles.content}
       onInteractOutside={toggleHandler}
-      onEscapeKeyDown={() => {
-        setMenuIsOpen(!menuIsOpen);
-      }}
+      onEscapeKeyDown={toggleHandler}
     >
       <Dialog.Title className="sr-only">Navigation</Dialog.Title>
-
       <motion.ul
         className={`${styles.navList} stack`}
         variants={variantsContent}
         initial={shouldReduceMotion ? null : "start"}
         animate="end"
       >
-        <motion.li variants={variantsMenuItems}>
-          <a
-            href="#"
-            className={styles.navItem}
-          >
-            why sam?
-          </a>
-        </motion.li>
-        <motion.li variants={variantsMenuItems}>
-          <a
-            href="#"
-            className={styles.navItem}
-          >
-            projects
-          </a>
-        </motion.li>
-        <motion.li variants={variantsMenuItems}>
-          <a
-            href="#"
-            className={styles.navItem}
-          >
-            faqs
-          </a>
-        </motion.li>
-        <motion.li variants={variantsMenuItems}>
-          <IconList
-            forceVisible={true}
-            iconSize="large"
-          />
-        </motion.li>
-        <motion.li variants={variantsMenuItems}>
-          <Button
-            variant="cta"
-            stretch={true}
-          >
-            let's talk
-          </Button>
-        </motion.li>
+        <Dialog.Close
+          asChild
+          className={styles.close}
+          onClick={toggleHandler}
+        >
+          <motion.li variants={variantsMenuItems}>
+            <a
+              href="#why"
+              className={styles.navItem}
+            >
+              why sam?
+            </a>
+          </motion.li>
+        </Dialog.Close>
+        <Dialog.Close
+          asChild
+          className={styles.close}
+          onClick={toggleHandler}
+        >
+          <motion.li variants={variantsMenuItems}>
+            <a
+              href="#projects"
+              className={styles.navItem}
+            >
+              projects
+            </a>
+          </motion.li>
+        </Dialog.Close>
+        <Dialog.Close
+          asChild
+          className={styles.close}
+          onClick={toggleHandler}
+        >
+          <motion.li variants={variantsMenuItems}>
+            <a
+              href="#faqs"
+              className={styles.navItem}
+            >
+              faqs
+            </a>
+          </motion.li>
+        </Dialog.Close>
+        <Dialog.Close
+          asChild
+          className={styles.close}
+          onClick={toggleHandler}
+        >
+          <motion.li variants={variantsMenuItems}>
+            <IconList
+              forceVisible={true}
+              iconSize="large"
+            />
+          </motion.li>
+        </Dialog.Close>
+        <Dialog.Close
+          asChild
+          className={styles.close}
+          onClick={toggleHandler}
+        >
+          <motion.li variants={variantsMenuItems}>
+            <Button
+              variant="cta"
+              stretch={true}
+            >
+              <a href="#talk">let's talk</a>
+            </Button>
+          </motion.li>
+        </Dialog.Close>
       </motion.ul>
     </Dialog.Content>
   );

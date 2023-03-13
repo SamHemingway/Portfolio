@@ -7,7 +7,7 @@
 /*                              BASIC STYLING                             */
 /* ---------------------------------------------------------------------- */
 
-*:focus {
+*:focus-visible {
   outline: 5px solid var(--clr-tertiary-800);
   outline-offset: 3px;
 }

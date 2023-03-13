@@ -5,7 +5,7 @@ import Parser from "html-react-parser";
 import { motion } from "framer-motion";
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
-function CollapsibleCardDeck({ data }) {
+function CollapsibleCardDeck({ data, singleColumn = false }) {
   const shouldReduceMotion = React.useContext(ReducedMotionContext);
 
   const [expanded, setExpanded] = React.useState(window.innerWidth > 785);
@@ -44,7 +44,7 @@ function CollapsibleCardDeck({ data }) {
   };
 
   return (
-    <ul className={styles.deck}>
+    <ul className={`${styles.deck} ${singleColumn && styles.deckSingle}`}>
       {data.map((item, index) => {
         return (
           <Card

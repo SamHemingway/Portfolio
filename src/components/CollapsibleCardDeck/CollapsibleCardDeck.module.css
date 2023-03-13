@@ -5,8 +5,20 @@
   gap: var(--space-s-m);
 }
 
+.deckSingle {
+  grid-template-columns: 1fr;
+}
+
 .card {
   list-style: none;
+}
+
+.card a:visited {
+  color: var(--clr-tertiary-800);
+}
+
+.card a {
+  color: var(--clr-tertiary-500);
 }
 
 .cardTitleBG {

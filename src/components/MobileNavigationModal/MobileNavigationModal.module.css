@@ -9,6 +9,11 @@
   color: var(--clr-secondary-100);
 }
 
+.close {
+  background: none;
+  border: none;
+}
+
 .navItem {
   text-decoration: none;
   color: var(--clr-secondary-100);
