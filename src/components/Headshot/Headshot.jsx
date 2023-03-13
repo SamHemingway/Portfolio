@@ -37,15 +37,15 @@ function Headshot({ subject, altText, shouldDelay }) {
       ref={ref}
     >
       <source
-        srcSet={`/src/assets/images/${subject}.avif`}
+        srcSet={`/dist/assets/images/${subject}.avif`}
         type="image/avif"
       />
       <source
-        srcSet={`/src/assets/images/${subject}.webp`}
+        srcSet={`/dist/assets/images/${subject}.webp`}
         type="image/webp"
       />
       <img
-        src={`/src/assets/images/${subject}.png`}
+        src={`/dist/assets/images/${subject}.png`}
         alt={altText}
       />
     </motion.picture>
