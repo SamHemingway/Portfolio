@@ -4,17 +4,17 @@ import styles from "./IconList.module.css";
 const data = [
   {
     link: "https://github.com/SamHemingway",
-    src: "/dist/assets/icons/github.svg",
+    src: "/assets/icons/github.svg",
     ariaLabel: "Go to Sam's GitHub page",
   },
   {
     link: "https://www.linkedin.com/in/sam-hemingway/",
-    src: "/dist/assets/icons/linked-in.svg",
+    src: "/assets/icons/linked-in.svg",
     ariaLabel: "Go to Sam's LinkedIn page",
   },
   {
     link: "#",
-    src: "/dist/assets/icons/download.svg",
+    src: "/assets/icons/download.svg",
     ariaLabel: "Download Sam's resumé in PDF format",
   },
 ];
