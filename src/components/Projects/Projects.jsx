@@ -11,7 +11,7 @@ function Projects() {
         "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
       id: "project-a",
       heroImg: "project-a",
-      href: "/project-a",
+      href: "#projects",
     },
     {
       title: "Immortal Tracker",
@@ -19,7 +19,7 @@ function Projects() {
         "<p>My favourite video game has 85 unique campaigns to complete.</p><p>Unfortunately, the game doesn’t help you track your progress, and whilst a spreadsheet does the job, I felt the community deserved better.</p><p>If you only have time for one, pick this.</p>",
       id: "immortal-tracker",
       heroImg: "immortal-tracker",
-      href: "/immortal-tracker",
+      href: "#projects",
       important: true,
     },
     {
@@ -28,7 +28,7 @@ function Projects() {
         "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
       id: "project-b",
       heroImg: "project-b",
-      href: "/project-b",
+      href: "#projects",
     },
   ];
 
