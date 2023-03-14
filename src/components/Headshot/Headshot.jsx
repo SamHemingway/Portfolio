@@ -12,16 +12,15 @@ function Headshot({ subject, altText, shouldDelay }) {
   const variants = {
     start: {
       opacity: 0,
-      x: distanceToShift,
       y: distanceToShift,
     },
     end: {
       opacity: 1,
-      x: 0,
       y: 0,
       transition: {
         duration: 1,
         delay: shouldDelay ? 2 : 0,
+        type: "spring",
       },
     },
   };

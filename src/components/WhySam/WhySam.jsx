@@ -32,7 +32,7 @@ function WhySam() {
     {
       title: "forward thinking",
       content:
-        "<p>I hate that feeling of knowing you've taken a shorcut that might cause issues further down the line.</p><p>If there's a way to build something so that it's easily repeatable, scalable and modular, I'll do it.</p><p>Yes, it might take a little longer now. But you're saving you and your teammates much more time in the future. Totally worth it.</p>",
+        "<p>I hate that feeling of knowing you've taken a shortcut that might cause issues further down the line.</p><p>If there's a way to build something so that it's easily repeatable, scalable and modular, I'll do it.</p><p>Yes, it might take a little longer now. But you're saving you and your teammates much more time in the future. Totally worth it.</p>",
       id: "forward",
     },
     {

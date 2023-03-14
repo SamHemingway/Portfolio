@@ -48,7 +48,6 @@ function HireMe() {
         <Headshot
           subject="rupert"
           altText="A stylised cariacuture of Sam's handsome dog, Rupert, waiting patiently for treats."
-          shouldDelay
         />
         <motion.h2
           className={styles.heroHeader}

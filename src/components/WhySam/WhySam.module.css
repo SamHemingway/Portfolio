@@ -13,7 +13,7 @@
 .wrapper {
   animation: sectionFade both;
   animation-duration: 1.5s;
-  animation-delay: 1.2s;
+  animation-delay: 3s;
   animation-timing-function: linear;
   margin-block-end: var(--space-l-xl);
 }
