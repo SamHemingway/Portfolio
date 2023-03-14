@@ -8,7 +8,7 @@ import { PopupButton } from "react-calendly";
 
 import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
 
-function MobileNavigationModal({ menuIsOpen, setMenuIsOpen, toggleHandler }) {
+function MobileNavigationModal({ toggleHandler }) {
   const shouldReduceMotion = React.useContext(ReducedMotionContext);
 
   const variantsContent = {
@@ -108,17 +108,7 @@ function MobileNavigationModal({ menuIsOpen, setMenuIsOpen, toggleHandler }) {
               variant="cta"
               stretch={true}
             >
-              <PopupButton
-                url="https://calendly.com/hemingway/hiresam"
-                rootElement={document.getElementById("root")}
-                text="Let's talk"
-                styles={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  textTransform: "uppercase",
-                }}
-              />
+              <a href="#hire">Let's talk</a>
             </Button>
           </motion.li>
         </Dialog.Close>

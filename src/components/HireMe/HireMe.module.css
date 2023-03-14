@@ -22,7 +22,6 @@
   gap: 1rem;
   align-items: center;
   position: relative;
-  z-index: 2;
 }
 
 .heroHeader {
@@ -45,6 +44,7 @@
   padding-block-end: 2rem;
   position: relative;
   isolation: isolate;
+  z-index: -1;
 }
 
 .content > * + * {
