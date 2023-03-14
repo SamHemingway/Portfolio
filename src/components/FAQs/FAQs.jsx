@@ -11,8 +11,7 @@ function FAQs() {
     },
     {
       title: "Do you speak French?",
-      content:
-        "<p>Oui, au niveau B2. Il faut dire que je n'ai jamais eu l'occasion de l'utiliser dans la vie professionnelle - tous les emplois que j'ai occupés jusqu'à présent l'ont été a les entreprises où l'anglais est la langue principale.</p>",
+      content: `<p lang="fr">Oui, au niveau B2. Il faut dire que je n'ai jamais eu l'occasion de l'utiliser dans la vie professionnelle - tous les emplois que j'ai occupés jusqu'à présent l'ont été a les entreprises où l'anglais est la langue principale.</p>`,
     },
     {
       title: "What makes you different?",

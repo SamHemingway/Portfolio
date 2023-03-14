@@ -77,6 +77,7 @@ function HireMe() {
             variant="cta"
             size="large"
             stretch={window.innerWidth <= 500}
+            tabIndex={-1}
           >
             <PopupButton
               url="https://calendly.com/hemingway/hiresam"

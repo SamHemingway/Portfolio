@@ -48,7 +48,10 @@ function Header({ menuIsOpen, setMenuIsOpen }) {
           <IconList />
         </div>
         <NavLinks data={navItems} />
-        <Button variant="letsTalk">
+        <Button
+          variant="letsTalk"
+          tabIndex={-1}
+        >
           <PopupButton
             url="https://calendly.com/hemingway/hiresam"
             rootElement={document.getElementById("root")}

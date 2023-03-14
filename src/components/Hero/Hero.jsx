@@ -77,9 +77,14 @@ function Hero() {
       >
         <div className="wrapper">
           <h2 className={styles.leadHeader}>
-            It's <em>great</em> to meet you. I'm&nbsp;Sam!
+            <span role="text">
+              It's <em>great</em> to meet you. I'm Sam!
+            </span>
           </h2>
-          <p className={styles.leadBody}>
+          <p
+            role="text"
+            className={styles.leadBody}
+          >
             An ex-startup salesperson who realised that the most satisfying part
             of his last role was building <em>on-brand, accessible and fun</em>{" "}
             custom demo instances with CSS to help my team try and land Fortune
