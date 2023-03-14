@@ -69,10 +69,14 @@ function HireMe() {
             That's right, I'm not above taking advantage of the fact that my dog
             is <em>outrageously handsome</em> to try and snag a job.
           </p>
-          <p>I'd be happy to tell you more about him (and me).</p>
+          <p>
+            I'd be happy to tell you more about him (and, answer any quesitons
+            you might have about me, of course).
+          </p>
           <Button
             variant="cta"
             size="large"
+            stretch={window.innerWidth <= 500}
           >
             <PopupButton
               url="https://calendly.com/hemingway/hiresam"
@@ -83,6 +87,7 @@ function HireMe() {
                 border: "none",
                 cursor: "pointer",
                 textTransform: "uppercase",
+                color: "inherit",
               }}
             />
           </Button>

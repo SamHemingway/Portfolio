@@ -23,6 +23,8 @@
 .headshot {
   width: clamp(15.625rem, 40vw, 28.125rem);
   padding-block-end: calc(var(--phase-gap) * 5);
+  z-index: 2;
+  position: relative;
 }
 
 .headshot > * {

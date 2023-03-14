@@ -43,8 +43,6 @@
   padding-block-start: var(--hero-margin);
   padding-block-end: 2rem;
   position: relative;
-  isolation: isolate;
-  z-index: -1;
 }
 
 .content > * + * {
