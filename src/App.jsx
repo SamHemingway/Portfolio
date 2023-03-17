@@ -7,13 +7,13 @@ import HireMe from "./components/HireMe";
 import FAQs from "./components/FAQs";
 import Footer from "./components/Footer";
 
-import ReducedMotionProvider from "./contexts/ReducedMotionProvider";
+import AnimationProvider from "./contexts/AnimationProvider";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
 
   return (
-    <ReducedMotionProvider>
+    <AnimationProvider>
       <Header
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={setMenuIsOpen}
@@ -26,7 +26,7 @@ function App() {
         <HireMe menuIsOpen={menuIsOpen} />
       </main>
       <Footer />
-    </ReducedMotionProvider>
+    </AnimationProvider>
   );
 }
 

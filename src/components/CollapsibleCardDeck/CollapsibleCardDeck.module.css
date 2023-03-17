@@ -21,6 +21,14 @@
   color: var(--clr-tertiary-500);
 }
 
+.card a {
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
 .cardTitleBG {
   background-color: var(--clr-tertiary-500);
   background-size: 4rem;
@@ -50,7 +58,7 @@
 }
 
 .cardBody {
-  color: var(--clr-primary-100);
+  color: var(--clr-secondary-100);
   background: var(--clr-primary-700);
   padding-block: var(--space-xs);
   padding-inline: var(--space-s);

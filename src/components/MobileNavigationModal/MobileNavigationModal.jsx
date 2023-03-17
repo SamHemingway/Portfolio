@@ -4,32 +4,11 @@ import * as Dialog from "@radix-ui/react-dialog";
 import IconList from "../IconList";
 import Button from "../Button";
 import { motion } from "framer-motion";
-import { PopupButton } from "react-calendly";
 
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function MobileNavigationModal({ toggleHandler }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
-
-  const variantsContent = {
-    end: {
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const variantsMenuItems = {
-    start: {
-      opacity: 0,
-      x: -50,
-    },
-    end: {
-      opacity: 1,
-      x: 0,
-    },
-  };
+  const { variants } = React.useContext(AnimationContext);
 
   return (
     <Dialog.Content
@@ -40,8 +19,8 @@ function MobileNavigationModal({ toggleHandler }) {
       <Dialog.Title className="sr-only">Navigation</Dialog.Title>
       <motion.ul
         className={`${styles.navList} stack`}
-        variants={variantsContent}
-        initial={shouldReduceMotion ? null : "start"}
+        variants={variants.childrenShortStagger}
+        initial="start"
         animate="end"
       >
         <Dialog.Close
@@ -49,7 +28,7 @@ function MobileNavigationModal({ toggleHandler }) {
           className={styles.close}
           onClick={toggleHandler}
         >
-          <motion.li variants={variantsMenuItems}>
+          <motion.li variants={variants.springRight}>
             <a
               href="#why"
               className={styles.navItem}
@@ -63,7 +42,7 @@ function MobileNavigationModal({ toggleHandler }) {
           className={styles.close}
           onClick={toggleHandler}
         >
-          <motion.li variants={variantsMenuItems}>
+          <motion.li variants={variants.springRight}>
             <a
               href="#projects"
               className={styles.navItem}
@@ -77,7 +56,7 @@ function MobileNavigationModal({ toggleHandler }) {
           className={styles.close}
           onClick={toggleHandler}
         >
-          <motion.li variants={variantsMenuItems}>
+          <motion.li variants={variants.springRight}>
             <a
               href="#faqs"
               className={styles.navItem}
@@ -91,7 +70,7 @@ function MobileNavigationModal({ toggleHandler }) {
           className={styles.close}
           onClick={toggleHandler}
         >
-          <motion.li variants={variantsMenuItems}>
+          <motion.li variants={variants.springRight}>
             <IconList
               forceVisible={true}
               iconSize="large"
@@ -103,7 +82,7 @@ function MobileNavigationModal({ toggleHandler }) {
           className={styles.close}
           onClick={toggleHandler}
         >
-          <motion.li variants={variantsMenuItems}>
+          <motion.li variants={variants.springRight}>
             <Button
               variant="cta"
               stretch={true}

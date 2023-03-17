@@ -6,40 +6,22 @@ import styles from "./Header.module.css";
 import Button from "../Button";
 import NavLinks from "../NavLinks/";
 import { motion } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 import { PopupButton } from "react-calendly";
 
 function Header({ menuIsOpen, setMenuIsOpen }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const { variants } = React.useContext(AnimationContext);
   const navItems = [
     { text: "why sam", id: "#why" },
     { text: "projects", id: "#projects" },
     { text: "FAQs", id: "#faqs" },
   ];
 
-  const variants = {
-    start: {
-      opacity: 0,
-      y: shouldReduceMotion ? 0 : -50,
-    },
-    finish: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 3,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
-
   return (
     <motion.header
       className={styles.wrapper}
-      variants={window.scrollY === 0 && variants}
-      initial={shouldReduceMotion ? null : "start"}
+      variants={variants.springDown}
+      initial="start"
       animate="finish"
     >
       <nav>
@@ -51,6 +33,7 @@ function Header({ menuIsOpen, setMenuIsOpen }) {
         <Button
           variant="letsTalk"
           tabIndex={-1}
+          as="div"
         >
           <PopupButton
             url="https://calendly.com/hemingway/hiresam"

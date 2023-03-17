@@ -1,38 +1,22 @@
 import React from "react";
 import styles from "./Headshot.module.css";
 import { motion, useInView } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
-function Headshot({ subject, altText, shouldDelay }) {
+function Headshot({ subject, altText, animate = true }) {
   const ref = React.useRef();
 
   const isInView = useInView(ref, { once: true });
 
-  const distanceToShift = window.innerWidth * 0.05;
-  const variants = {
-    start: {
-      opacity: 0,
-      y: distanceToShift,
-    },
-    end: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: shouldDelay ? 2 : 0,
-        type: "spring",
-      },
-    },
-  };
-
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const { variants } = React.useContext(AnimationContext);
 
   return (
     <motion.picture
       className={styles.headshot}
-      variants={variants}
-      initial={shouldReduceMotion ? null : "start"}
+      variants={animate && variants.springUp}
+      initial="start"
       animate={isInView ? "end" : "start"}
+      transition={{ delay: 2 }}
       ref={ref}
     >
       <source

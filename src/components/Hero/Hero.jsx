@@ -3,44 +3,10 @@ import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
 import Headshot from "../Headshot";
 import Pills from "../Pills";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
-import SlideIntoView from "../SlideIntoView";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function Hero() {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
-
-  const variantsHeader = {
-    start: {
-      opacity: 0,
-    },
-    end: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-
-  const variantsLead = {
-    start: {
-      opacity: 0,
-    },
-    end: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 3,
-      },
-    },
-    endReducedMotion: {
-      opacity: 1,
-      transition: {
-        duration: 0,
-        delay: 3,
-      },
-    },
-  };
+  const { variants } = React.useContext(AnimationContext);
 
   const skills = [
     "HTML5",
@@ -49,31 +15,31 @@ function Hero() {
     "React",
     "Vite",
     "Framer Motion",
-    "Styled Components",
+    "CSS Modules",
+    "JSDoc",
   ];
 
   return (
-    <SlideIntoView>
+    <>
       <div className={`wrapper ${styles.heroWrapper}`}>
         <Headshot
           subject="sam"
           altText="A stylised cariacuture of Sam smiling warmly."
-          shouldDelay
         />
         <motion.h1
           className={styles.heroHeader}
-          variants={variantsHeader}
-          initial={shouldReduceMotion ? null : "start"}
+          variants={variants.fadeNoDelay}
+          initial="start"
           animate="end"
         >
           hire a jnr frontend developer with a growth mindset
         </motion.h1>
       </div>
-      <motion.article
+      <motion.section
         className={styles.leadWrapper}
-        variants={variantsLead}
-        initial={shouldReduceMotion ? null : "start"}
-        animate={shouldReduceMotion ? "endReducedMotion" : "end"}
+        variants={variants.fade}
+        initial={"start"}
+        animate={"end"}
       >
         <div className="wrapper">
           <h2 className={styles.leadHeader}>
@@ -90,10 +56,30 @@ function Hero() {
             custom demo instances with CSS to help my team try and land Fortune
             100 companies.
           </p>
+          <p
+            role="text"
+            className={styles.leadBody}
+          >
+            After getting laid off, I thought to myself: "That was fun. Let's
+            learn more".
+          </p>
+          <p
+            role="text"
+            className={styles.leadBody}
+          >
+            Now, here we are: attempting a career change whilst most tech
+            companies are cutting down on staff, rather than adding them.
+          </p>
+          <p
+            role="text"
+            className={styles.leadBody}
+          >
+            <em>Perfect timing</em> 👌
+          </p>
           <Pills content={skills} />
         </div>
-      </motion.article>
-    </SlideIntoView>
+      </motion.section>
+    </>
   );
 }
 

@@ -2,27 +2,10 @@ import React from "react";
 import styles from "./ProjectCards.module.css";
 import Parser from "html-react-parser";
 import { motion } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function ProjectCards({ projects }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
-
-  const variantsTransition = {
-    duration: shouldReduceMotion ? 0 : 0.15,
-  };
-
-  const variants = {
-    initial: {
-      scale: 1,
-      transition: variantsTransition,
-    },
-    hover: {
-      scale: 1.025,
-      transition: variantsTransition,
-    },
-    tap: { scale: 0.975 },
-    transition: variantsTransition,
-  };
+  const { variants } = React.useContext(AnimationContext);
 
   return (
     <ul className={styles.deck}>
@@ -33,7 +16,7 @@ function ProjectCards({ projects }) {
             className={`${styles.cardWrapper} ${
               project.important && styles.importantCard
             }`}
-            variants={variants}
+            variants={variants.projectCards}
             initial="initial"
             whileHover="hover"
             whileTap="tap"

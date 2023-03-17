@@ -4,6 +4,8 @@
   font-family: var(--ff-secondary);
   font-weight: var(--fw-bold);
   padding-inline: var(--space-s);
+  inline-size: fit-content;
+  text-align: center;
 }
 
 .button a {
@@ -34,7 +36,7 @@
 }
 
 .stretch {
-  width: 100%;
+  inline-size: 100%;
 }
 
 @media (min-width: 56.25rem) {

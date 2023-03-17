@@ -8,10 +8,12 @@ function FAQs() {
       title: "Where are you based?",
       content:
         "<p>Montréal, Canada, where I have permanent residency (I'm originally from the UK)!</p>",
+      id: "where",
     },
     {
       title: "Do you speak French?",
       content: `<p lang="fr">Oui, au niveau B2. Il faut dire que je n'ai jamais eu l'occasion de l'utiliser dans la vie professionnelle - tous les emplois que j'ai occupés jusqu'à présent l'ont été a les entreprises où l'anglais est la langue principale.</p>`,
+      id: "langue",
     },
     {
       title: "What makes you different?",
@@ -19,6 +21,7 @@ function FAQs() {
             Well it's certainly not a degree in Computer Science (I studied
             landscape architecture at school, in case you're curious!).
           </p>
+          <p>You're definitely interviewing more experienced candidates, with better technical skills than me.</p>
           <p>
             What differentiates me comes down to soft-skills. I've worked at
             companies ranging from 
@@ -38,6 +41,7 @@ function FAQs() {
             </a>
             .
           </p>`,
+      id: "different",
     },
     {
       title: "12 months without work?",
@@ -67,6 +71,7 @@ function FAQs() {
               career 💪
             </li>
           </ul>`,
+      id: "gap",
     },
     {
       title: "How did you learn to code?",
@@ -111,6 +116,16 @@ function FAQs() {
               <a href="https://headlessui.com/">Headless UI</a>.
             </li>
           </ul>`,
+      id: "learn",
+    },
+    {
+      title: "Career change & layoffs?",
+      content: `<p>
+            I know, I know. Crazy decision. <a href="https://hired.com/state-of-software-engineers/2023/">Interview interest for Junior engineers is flatlining</a>, and the safe option would've been to get another well-paying sales job.
+          </p>
+          <p>Blame my sales background: I relish the opportunity to win against the odds.</p>
+          `,
+      id: "change",
     },
   ];
 

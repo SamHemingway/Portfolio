@@ -1,6 +1,6 @@
 .projectsWrapper {
-  color: var(--clr-primary-700);
-  background: var(--gradient-highlight);
+  color: var(--light-content);
+  background: var(--light-bg);
   padding-block: var(--space-s-m);
 }
 

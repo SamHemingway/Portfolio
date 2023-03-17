@@ -37,26 +37,6 @@
   margin-block-start: var(--stack-space, var(--space-m-l));
 }
 
-/* Switcher: used for any elements that need to move from a horizontal to 
-vertical layout at a certain threshold */
-
-.switcher {
-  --switcher-gap: var(--s1);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--switcher-gap);
-}
-
-.switcher > * {
-  flex-grow: 1;
-  flex-basis: calc((67.375rem - 100%) * 999);
-}
-
-.switcher > :nth-last-child(n + 4),
-.switcher > :nth-last-child(n + 4) ~ * {
-  flex-basis: 100%;
-}
-
 /* Icons */
 
 .icon {

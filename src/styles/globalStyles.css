@@ -44,6 +44,12 @@ h3 > svg {
   }
 }
 
-section > * + * {
+section {
   margin-block-end: var(--space-l-xl);
+}
+
+.calendly-overlay {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: hsla(0, 0%, 0%, 0.8);
 }

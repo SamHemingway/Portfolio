@@ -1,9 +1,9 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
-function SlideIntoView({ children, id }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+function SlideIntoView({ children, ...delegated }) {
+  const { hasVisited, shouldReduceMotion } = React.useContext(AnimationContext);
   const ref = React.useRef();
   const isInView = useInView(ref, { once: true });
 
@@ -12,15 +12,15 @@ function SlideIntoView({ children, id }) {
       ref={ref}
       initial={{ y: "0px" }}
       animate={{
-        opacity: isInView ? 1 : 0,
-        y: isInView ? "0px" : shouldReduceMotion ? "0px" : "50px",
+        opacity: isInView || hasVisited ? 1 : 0,
+        y: isInView || hasVisited ? "0px" : shouldReduceMotion ? "0px" : "50px",
         transition: {
           duration: 0.5,
           type: "spring",
           stiffness: 100,
         },
       }}
-      id={id}
+      {...delegated}
     >
       {children}
     </motion.section>

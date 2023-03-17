@@ -15,6 +15,7 @@ import React from "react";
 function useStorage(data, options = { method: "get", type: "local" }) {
   const methods = ["get", "set", "remove", "clear"];
   let methodToUse;
+  let result;
   const storageType =
     options.type === "session" ? sessionStorage : localStorage;
 
@@ -47,7 +48,7 @@ function useStorage(data, options = { method: "get", type: "local" }) {
 
   if (methodToUse === "get") {
     React.useEffect(() => {
-      storageType.getItem(data);
+      result = storageType.getItem(data);
     }, []);
   }
 
@@ -55,21 +56,29 @@ function useStorage(data, options = { method: "get", type: "local" }) {
     const [key, value] = data;
     React.useEffect(() => {
       storageType.setItem(key, value);
+      console.log(`${key}: ${value} added to ${storageType}Storage`);
     }, []);
   }
 
   if (methodToUse === "remove") {
     React.useEffect(() => {
       storageType.removeItem(data);
+      result = `${key}: ${value} removed from ${storageType}Storage`;
     }, []);
   }
 
   if (methodToUse === "clear") {
     React.useEffect(() => {
       storageType.clear();
+      result = `${storageType}Storage cleared`;
     }, []);
   }
-}
 
-// useStorage();
+  if (typeof result === "string") {
+    console.log(string);
+    return;
+  }
+
+  return result;
+}
 export default useStorage;

@@ -2,6 +2,8 @@ import React from "react";
 import CollapsibleCardDeck from "../CollapsibleCardDeck";
 import SlideIntoView from "../SlideIntoView";
 import styles from "./WhySam.module.css";
+import { motion } from "framer-motion";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function WhySam() {
   const traits = [
@@ -43,18 +45,23 @@ function WhySam() {
     },
   ];
 
+  const { variants } = React.useContext(AnimationContext);
+
   return (
     <SlideIntoView id="why">
-      <div
+      <motion.div
         className={`wrapper ${styles.wrapper}`}
         aria-label="Why hire sam?"
+        variants={variants.fade}
+        initial="start"
+        animate="end"
       >
         <h2>sam is...</h2>
         <CollapsibleCardDeck
           data={traits}
           cardsOpen={3}
         />
-      </div>
+      </motion.div>
     </SlideIntoView>
   );
 }

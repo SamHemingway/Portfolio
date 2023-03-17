@@ -2,30 +2,12 @@ import React from "react";
 import styles from "./HamburgerIcon.module.css";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 import useScrollbarWidth from "../../hooks/useScrollbarWidth";
 
 function HamburgerIcon({ menuIsOpen, toggleHandler }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const { variants } = React.useContext(AnimationContext);
   let animation = menuIsOpen ? "open" : "closed";
-
-  const variantsBox = {
-    open: !shouldReduceMotion ? undefined : { fill: "black" },
-  };
-
-  const variantsLine1 = {
-    open: shouldReduceMotion
-      ? undefined
-      : { d: "M 25 25 L 75 75", stroke: "white" },
-  };
-  const variantsLine2 = {
-    open: shouldReduceMotion ? undefined : { opacity: 0 },
-  };
-  const variantsLine3 = {
-    open: shouldReduceMotion
-      ? undefined
-      : { d: "M 25 75 L 75 25", stroke: "white" },
-  };
 
   const scrollbarWidth = useScrollbarWidth();
 
@@ -74,21 +56,21 @@ function HamburgerIcon({ menuIsOpen, toggleHandler }) {
           y="2.5"
           fill="url(#gradient-0)"
           ry="10"
-          variants={variantsBox}
+          variants={variants.hamburgerIcon.wrapper}
           animate={animation}
         ></motion.rect>
         <motion.path
           className={styles.line}
           d="M 20 30 L 80 30"
           strokeLinecap="round"
-          variants={variantsLine1}
+          variants={variants.hamburgerIcon.line1}
           animate={animation}
         ></motion.path>
         <motion.path
           className={styles.line}
           d="M 20 50 L 80 50"
           strokeLinecap="round"
-          variants={variantsLine2}
+          variants={variants.hamburgerIcon.line2}
           transition={{ duration: 0.1 }}
           animate={animation}
           opacity="1"
@@ -97,7 +79,7 @@ function HamburgerIcon({ menuIsOpen, toggleHandler }) {
           className={styles.line}
           d="M 20 70 L 80 70"
           strokeLinecap="round"
-          variants={variantsLine3}
+          variants={variants.hamburgerIcon.line3}
           animate={animation}
         ></motion.path>
       </motion.svg>

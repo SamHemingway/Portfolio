@@ -38,8 +38,8 @@
 }
 
 .leadWrapper {
-  color: var(--clr-primary-700);
-  background: var(--gradient-highlight);
+  color: var(--light-content);
+  background: var(--light-bg);
   padding-block-start: var(--hero-margin);
   padding-block-end: 2rem;
   position: relative;

@@ -1,12 +1,23 @@
 import React from "react";
 import styles from "./Button.module.css";
-function Button({ children, variant, stretch, size, tabIndex }) {
+function Button({ children, variant, stretch, size, tabIndex, as }) {
   let computedStyles = ` ${styles.button}`;
   if (variant) computedStyles += ` ${styles[variant]}`;
   if (stretch) computedStyles += ` ${styles.stretch}`;
   if (size) computedStyles += ` ${styles[size]}`;
 
-  return (
+  const hasButtonChild = React.Children.toArray(children).some((child) => {
+    return child.type.name === "PopupButton2";
+  });
+
+  return hasButtonChild ? (
+    <div
+      className={computedStyles}
+      tabIndex={tabIndex}
+    >
+      {children}
+    </div>
+  ) : (
     <button
       className={computedStyles}
       tabIndex={tabIndex}

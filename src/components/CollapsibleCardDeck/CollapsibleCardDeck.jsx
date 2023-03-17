@@ -3,45 +3,20 @@ import styles from "./CollapsibleCardDeck.module.css";
 import { Disclosure as Card } from "@headlessui/react";
 import Parser from "html-react-parser";
 import { motion } from "framer-motion";
-import { ReducedMotionContext } from "../../contexts/ReducedMotionProvider";
+import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function CollapsibleCardDeck({ data, doubleColumn = false, cardsOpen }) {
-  const shouldReduceMotion = React.useContext(ReducedMotionContext);
+  const { variants } = React.useContext(AnimationContext);
 
   const [expanded, setExpanded] = React.useState(window.innerWidth > 785);
 
-  const variantsTitle = {
-    start: {
-      backgroundPosition: "1em 0em",
-      transition: { duration: "0.75", ease: "easeOut" },
-    },
+  const variantsTitle = variants.cards.title;
 
-    hover: {
-      backgroundPosition: shouldReduceMotion ? "1em 0em" : "1em 1em",
-      backgroundColor: "hsla(33, 99%, 75%, 1)",
-    },
+  const variantsIcon = variants.cards.icon;
 
-    tap: {
-      backgroundPosition: shouldReduceMotion ? "1em 0em" : "1em 1.5em",
-      backgroundColor: "hsla(33, 99%, 75%, 1)",
-    },
-  };
+  const variantsPanel = variants.cards.panel;
 
-  const variantsIcon = {
-    start: { scale: 1, transition: { duration: "0.75", ease: "easeOut" } },
-    hover: { scale: shouldReduceMotion ? 1 : 1.05 },
-    tap: { scale: shouldReduceMotion ? 1 : 0.95 },
-  };
-
-  const variantsPanel = {
-    start: { opacity: 0 },
-    end: { opacity: 1 },
-  };
-
-  const variantsPanelText = {
-    start: { y: shouldReduceMotion ? 0 : -20, opacity: 0 },
-    end: { y: 0, opacity: 1 },
-  };
+  const variantsPanelText = variants.cards.text;
 
   function handleOpenCards(index) {
     if (expanded) return index < cardsOpen ? true : false;
@@ -85,10 +60,7 @@ function CollapsibleCardDeck({ data, doubleColumn = false, cardsOpen }) {
                         whileTap="tap"
                         tabIndex={-1}
                       >
-                        <ExpandIcon
-                          open={open}
-                          shouldReduceMotion={shouldReduceMotion}
-                        />
+                        <ExpandIcon open={open} />
                       </motion.div>
                     </Card.Button>
                   </motion.div>
@@ -118,7 +90,8 @@ function CollapsibleCardDeck({ data, doubleColumn = false, cardsOpen }) {
   );
 }
 
-function ExpandIcon({ open, shouldReduceMotion }) {
+function ExpandIcon({ open }) {
+  const { shouldReduceMotion } = React.useContext(AnimationContext);
   function iconAnimation() {
     if (open) {
       return shouldReduceMotion ? { opacity: 0 } : { d: "M 50 50 L 50 50" };

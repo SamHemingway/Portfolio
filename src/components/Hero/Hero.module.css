@@ -25,8 +25,8 @@
 }
 
 .leadWrapper {
-  color: var(--clr-primary-700);
-  background: var(--gradient-highlight);
+  color: var(--light-content);
+  background: var(--light-bg);
   padding-block-start: var(--hero-margin);
   padding-block-end: 2rem;
   position: relative;
@@ -39,6 +39,11 @@
 
 .leadBody {
   margin-block-end: var(--space-s-m);
+}
+
+.timing {
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
 }
 
 @media (prefers-reduced-motion: no-preference) {
