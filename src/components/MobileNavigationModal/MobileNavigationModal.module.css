@@ -37,10 +37,12 @@
 
 .content {
   position: fixed;
-  top: 50%;
+  top: 1%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 20%);
   inline-size: 100%;
+  max-block-size: 80vh;
   padding-inline: 20vw;
   z-index: 3;
+  overflow-y: scroll;
 }
