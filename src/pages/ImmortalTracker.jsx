@@ -6,6 +6,7 @@ import Pills from "../components/Pills";
 import Header from "../components/Primitives/Heading";
 import CollapsibleCardDeck from "../components/CollapsibleCardDeck/CollapsibleCardDeck";
 import SlideIntoView from "../components/SlideIntoView";
+import scrollToTop from "../helpers/scrollToTop";
 
 export default function ImmortalTracker() {
   const techStack = ["React", "Styled Components"];
@@ -238,6 +239,8 @@ export default function ImmortalTracker() {
       ),
     },
   ];
+
+  scrollToTop();
 
   return (
     <>
