@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ImmortalTracker from "./pages/ImmortalTracker";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
-import Root from "./pages/root";
+import Root from "./pages/Root";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
