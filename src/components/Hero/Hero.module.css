@@ -1,14 +1,18 @@
 :root {
-  --hero-margin: 8rem;
+  --hero-margin: var(--space-2xl-3xl);
 }
 
 .heroWrapper {
-  margin-block-start: 6.5rem;
+  margin-block-start: var(--hero-margin);
   margin-block-end: calc(-1 * var(--hero-margin));
   display: flex;
   flex-direction: column-reverse;
   gap: 1rem;
   align-items: center;
+}
+
+.heroWrapperNoImage {
+  margin-block-end: var(--space-2xl-3xl);
 }
 
 .heroHeader {
@@ -30,7 +34,10 @@
   padding-block-start: var(--hero-margin);
   padding-block-end: 2rem;
   position: relative;
-  z-index: -1;
+}
+
+.leadWrapperNoImage {
+  padding-block-start: 0.7rem;
 }
 
 .leadHeader {

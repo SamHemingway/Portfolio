@@ -1,0 +1,7 @@
+.leadHeader {
+  font-size: var(--space-m-l);
+}
+
+.leadBody {
+  margin-block-end: var(--space-s-m);
+}

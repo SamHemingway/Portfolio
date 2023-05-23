@@ -25,7 +25,7 @@ function HireMe() {
             is <em>outrageously handsome</em> to try and snag a job.
           </p>
           <p>
-            I'd be happy to tell you more about him (and, answer any quesitons
+            I'd be happy to tell you more about him (and, answer any questions
             you might have about me, of course).
           </p>
           <Button

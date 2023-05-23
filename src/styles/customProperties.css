@@ -133,4 +133,10 @@
     var(--clr-secondary-300);
   --phased-effect-transparent: var(--phase-gap) var(--phase-gap) 0px
     var(--clr-secondary-300);
+
+  --phased-effect-vert-1: 0px var(--phase-gap) 0px var(--clr-tertiary-800);
+  --phased-effect-vert-2: 0px var(--phase-gap) 0px var(--clr-tertiary-500);
+  --phased-effect-vert-3: 0px var(--phase-gap) 0px var(--clr-secondary-300);
+  --phased-effect-vert-transparent: 0px var(--phase-gap) 0px
+    var(--clr-secondary-300);
 }

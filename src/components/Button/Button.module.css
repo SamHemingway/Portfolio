@@ -6,6 +6,8 @@
   padding-inline: var(--space-s);
   inline-size: fit-content;
   text-align: center;
+  transition: transform 0.1s, box-shadow 0.1s;
+  border: none;
 }
 
 .button a {
@@ -21,8 +23,13 @@
   background: var(--gradient-strong);
   border: 2px solid var(--clr-primary-700);
   color: var(--clr-primary-700);
-  transition: transform 0.1s, box-shadow 0.1s;
   border-radius: var(--rad-sm);
+}
+
+.fill {
+  background: var(--clr-primary-700);
+  color: var(--clr-primary-100);
+  border-radius: var(--rad-xs);
 }
 
 .letsTalk {

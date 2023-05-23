@@ -35,7 +35,7 @@ function AnimationProvider({ children }) {
     },
     fadeNoDelay: {
       start: {
-        opacity: hasVisited ? 1 : 0,
+        opacity: 0,
       },
       end: {
         opacity: 1,

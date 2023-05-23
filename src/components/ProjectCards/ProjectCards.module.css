@@ -87,3 +87,7 @@
 .cardContent > p {
   text-decoration: none;
 }
+
+.disabled {
+  cursor: not-allowed;
+}

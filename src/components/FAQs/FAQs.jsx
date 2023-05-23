@@ -45,30 +45,20 @@ function FAQs() {
     },
     {
       title: "12 months without work?",
-      content: `<p>A very valid question. The short version:</p>
+      content: `<p>A very valid question. Here's the short version:</p>
           <ul>
             <li>
-              I spent ~3 months interviewing for sales positions before
-              realising that the reason that I kept on withdrawing from the
-              interview process wasn't because, as I kept telling myself, it
-              <em>"wasn't the right opportunity"</em>. It was because I simply
-              didn't want to do it anymore, combined with the fact that that my
-              side-project of developing my programming skills was more
-              intellectually stimulating than any deal I'd ever closed.
+              1 month to refresh and recharge post lay-off.
             </li>
             <li>
-              So I decided to focus on that full-time. <strong>Boom</strong>:
-              COVID. For around 3 months, I endured brain fog, aching joints and
-              a complete inability to stay awake throughout the day.
+              2 months interviewing for sales positions before
+              realising I didn't want to do it anymore.
             </li>
             <li>
-              Once I recovered, I spent 6 weeks on vacation visiting family
-              (plus enjoying being able to taste food again) before returning
-              and throwing myself into my studies.
+              4 months of debilitating long COVID symptoms — fun!
             </li>
             <li>
-              Now, I'm chomping at the bit to start the next chapter in my
-              career 💪
+              5+ months of solid coding, with a focus on React and accessibility.
             </li>
           </ul>`,
       id: "gap",

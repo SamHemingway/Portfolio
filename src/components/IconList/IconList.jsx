@@ -13,7 +13,7 @@ const data = [
     ariaLabel: "Go to Sam's LinkedIn page",
   },
   {
-    link: "#",
+    link: "/assets/Sam Hemingway - Frontend Developer.pdf",
     src: "/assets/icons/download.svg",
     ariaLabel: "Download Sam's resumé in PDF format",
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Button.module.css";
-function Button({ children, variant, stretch, size, tabIndex, as }) {
+function Button({ children, variant, stretch, size, tabIndex, ...delegated }) {
   let computedStyles = ` ${styles.button}`;
   if (variant) computedStyles += ` ${styles[variant]}`;
   if (stretch) computedStyles += ` ${styles.stretch}`;
@@ -21,6 +21,7 @@ function Button({ children, variant, stretch, size, tabIndex, as }) {
     <button
       className={computedStyles}
       tabIndex={tabIndex}
+      {...delegated}
     >
       {children}
     </button>

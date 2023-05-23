@@ -4,7 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import HamburgerIcon from "../HamburgerIcon";
 import MobileNavigationModal from "../MobileNavigationModal/MobileNavigationModal";
 
-function HamburgerMenu({ menuIsOpen, setMenuIsOpen }) {
+function HamburgerMenu({ menuIsOpen, setMenuIsOpen, navLinks }) {
   function toggleMenu() {
     const nextMenuIsOpen = !menuIsOpen;
     setMenuIsOpen(nextMenuIsOpen);
@@ -26,9 +26,8 @@ function HamburgerMenu({ menuIsOpen, setMenuIsOpen }) {
             <span className="sr-only">Close Menu</span>
           </Dialog.Close>
           <MobileNavigationModal
-            menuIsOpen={menuIsOpen}
             toggleHandler={toggleMenu}
-            setMenuIsOpen={setMenuIsOpen}
+            navLinks={navLinks}
           />
         </Dialog.Portal>
       </Dialog.Root>

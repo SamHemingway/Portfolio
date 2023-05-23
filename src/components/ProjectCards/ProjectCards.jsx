@@ -3,6 +3,7 @@ import styles from "./ProjectCards.module.css";
 import Parser from "html-react-parser";
 import { motion } from "framer-motion";
 import { AnimationContext } from "../../contexts/AnimationProvider";
+import { Link } from "react-router-dom";
 
 function ProjectCards({ projects }) {
   const { variants } = React.useContext(AnimationContext);
@@ -22,29 +23,31 @@ function ProjectCards({ projects }) {
             whileTap="tap"
             tabIndex={-1}
           >
-            <a
-              href={project.href}
-              className={styles.card}
+            <Link
+              to={project.href}
+              className={`${styles.card} ${
+                project.disabled && styles.disabled
+              }`}
             >
               <picture className={styles.cardImage}>
-                {/* <source
-                srcset={`assets/images/${project.heroImage}.avif`}
-                type="image/avif"
-              />
-              <source
-                srcset={`assets/images/${project.heroImage}.webp`}
-                type="image/webp"
-              /> */}
+                <source
+                  srcSet={`assets/images/${project.heroImg}.avif`}
+                  type="image/avif"
+                />
+                <source
+                  srcSet={`assets/images/${project.heroImg}.webp`}
+                  type="image/webp"
+                />
                 <img
-                  src="https://picsum.photos/seed/picsum/900/300"
-                  alt=""
+                  src={`assets/images/${project.heroImg}.png`}
+                  alt="A screenshot of the project."
                 />
               </picture>
               <div className={styles.cardContent}>
                 <h3 className={styles.cardHeader}>{project.title}</h3>
                 {Parser(project.content)}
               </div>
-            </a>
+            </Link>
           </motion.li>
         );
       })}

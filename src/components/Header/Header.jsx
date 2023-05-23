@@ -11,10 +11,10 @@ import { PopupButton } from "react-calendly";
 
 function Header({ menuIsOpen, setMenuIsOpen }) {
   const { variants } = React.useContext(AnimationContext);
-  const navItems = [
-    { text: "why sam", id: "#why" },
-    { text: "projects", id: "#projects" },
-    { text: "FAQs", id: "#faqs" },
+  const navLinks = [
+    { text: "why sam", id: "/#why" },
+    { text: "projects", id: "/#projects" },
+    { text: "FAQs", id: "/#faqs" },
   ];
 
   return (
@@ -29,7 +29,7 @@ function Header({ menuIsOpen, setMenuIsOpen }) {
           <Logo menuIsOpen={menuIsOpen} />
           <IconList />
         </div>
-        <NavLinks data={navItems} />
+        <NavLinks data={navLinks} />
         <Button
           variant="letsTalk"
           tabIndex={-1}
@@ -50,6 +50,7 @@ function Header({ menuIsOpen, setMenuIsOpen }) {
         <HamburgerMenu
           menuIsOpen={menuIsOpen}
           setMenuIsOpen={setMenuIsOpen}
+          navLinks={navLinks}
         />
       </nav>
     </motion.header>

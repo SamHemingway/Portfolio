@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./CollapsibleCardDeck.module.css";
 import { Disclosure as Card } from "@headlessui/react";
-import Parser from "html-react-parser";
 import { motion } from "framer-motion";
 import { AnimationContext } from "../../contexts/AnimationProvider";
 
@@ -76,7 +75,7 @@ function CollapsibleCardDeck({ data, doubleColumn = false, cardsOpen }) {
                         initial="start"
                         animate="end"
                       >
-                        {Parser(item.content)}
+                        {item.content}
                       </motion.div>
                     </motion.div>
                   </Card.Panel>

@@ -14,9 +14,13 @@
     "@react-hookz/web": "^22.0.0",
     "framer-motion": "^9.0.4",
     "html-react-parser": "^3.0.9",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-calendly": "^4.1.1",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
+    "sort-by": "^1.2.0",
     "use-session-storage-state": "^18.1.1"
   },
   "devDependencies": {

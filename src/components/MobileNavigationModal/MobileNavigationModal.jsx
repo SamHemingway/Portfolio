@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import { AnimationContext } from "../../contexts/AnimationProvider";
 
-function MobileNavigationModal({ toggleHandler }) {
+function MobileNavigationModal({ toggleHandler, navLinks }) {
   const { variants } = React.useContext(AnimationContext);
 
   return (
@@ -23,77 +23,92 @@ function MobileNavigationModal({ toggleHandler }) {
         initial="start"
         animate="end"
       >
+        {navLinks.map((data, index) => {
+          return (
+            <Dialog.Close
+              asChild
+              className={styles.close}
+              onClick={toggleHandler}
+              key={index}
+            >
+              <NavLink data={data} />
+            </Dialog.Close>
+          );
+        })}
         <Dialog.Close
           asChild
           className={styles.close}
           onClick={toggleHandler}
         >
-          <motion.li variants={variants.springRight}>
-            <a
-              href="#why"
-              className={styles.navItem}
-            >
-              why sam?
-            </a>
-          </motion.li>
+          <Socials />
         </Dialog.Close>
         <Dialog.Close
           asChild
           className={styles.close}
           onClick={toggleHandler}
         >
-          <motion.li variants={variants.springRight}>
-            <a
-              href="#projects"
-              className={styles.navItem}
-            >
-              projects
-            </a>
-          </motion.li>
-        </Dialog.Close>
-        <Dialog.Close
-          asChild
-          className={styles.close}
-          onClick={toggleHandler}
-        >
-          <motion.li variants={variants.springRight}>
-            <a
-              href="#faqs"
-              className={styles.navItem}
-            >
-              faqs
-            </a>
-          </motion.li>
-        </Dialog.Close>
-        <Dialog.Close
-          asChild
-          className={styles.close}
-          onClick={toggleHandler}
-        >
-          <motion.li variants={variants.springRight}>
-            <IconList
-              forceVisible={true}
-              iconSize="large"
-            />
-          </motion.li>
-        </Dialog.Close>
-        <Dialog.Close
-          asChild
-          className={styles.close}
-          onClick={toggleHandler}
-        >
-          <motion.li variants={variants.springRight}>
-            <Button
-              variant="cta"
-              stretch={true}
-            >
-              <a href="#hire">Let's talk</a>
-            </Button>
-          </motion.li>
+          <CTAButton
+            variant="cta"
+            stretch={true}
+          >
+            <a href="#hire">Let's talk</a>
+          </CTAButton>
         </Dialog.Close>
       </motion.ul>
     </Dialog.Content>
   );
 }
+
+const NavLink = React.forwardRef(function ({ data }, ref) {
+  const { variants } = React.useContext(AnimationContext);
+  return (
+    <motion.li
+      variants={variants.springRight}
+      ref={ref}
+    >
+      <a
+        href={data.id}
+        className={styles.navItem}
+      >
+        {data.text}
+      </a>
+    </motion.li>
+  );
+});
+
+const Socials = React.forwardRef(function (props, ref) {
+  const { variants } = React.useContext(AnimationContext);
+  return (
+    <motion.li
+      variants={variants.springRight}
+      ref={ref}
+    >
+      <IconList
+        forceVisible={true}
+        iconSize="large"
+      />
+    </motion.li>
+  );
+});
+
+const CTAButton = React.forwardRef(function (
+  { variant, stretch, children },
+  ref
+) {
+  const { variants } = React.useContext(AnimationContext);
+  return (
+    <motion.li
+      variants={variants.springRight}
+      ref={ref}
+    >
+      <Button
+        variant={variant}
+        stretch={stretch}
+      >
+        {children}
+      </Button>
+    </motion.li>
+  );
+});
 
 export default MobileNavigationModal;
