@@ -40,10 +40,10 @@ function FAQs() {
           </p>
           <p>
             What differentiates me comes down to soft-skills. I've worked at
-            companies ranging from
-            <a href="https://www.nationwide.co.uk">national banks</a>, to
+            companies ranging from{" "}
+            <a href="https://www.nationwide.co.uk">national banks</a>, to{" "}
             <a href="https://www.poka.io">start-ups</a>, to being the 4th sales
-            hire at one of the
+            hire at one of the{" "}
             <a href="https://www.hopin.com">
               fastest growing companies in history
             </a>
@@ -51,7 +51,7 @@ function FAQs() {
             employees in under a year.
           </p>
           <p>
-            When you hire me, you know that
+            When you hire me, you know that{" "}
             <a href="#why">
               I already know how to be an effective and productive teammember
             </a>
@@ -113,17 +113,17 @@ function FAQs() {
             <li>
               <a href="https://www.frontendmentor.io/profile/SamHemingway">
                 Frontend Mentor
-              </a>
+              </a>{" "}
               to get experience building sites from Figma files.
             </li>
             <li>
-              <a href="https://www.codewars.com/users/SamHemingway">Codewars</a>
+              <a href="https://www.codewars.com/users/SamHemingway">Codewars</a>{" "}
               to test my understanding of basic JS concepts.
             </li>
             <li>
-              Using official documentation to learn React libraries like
-              <a href="https://www.framer.com/motion/">Framer Motion</a>,
-              <a href="https://www.radix-ui.com/">Radix UI</a> &
+              Using official documentation to learn React libraries like{" "}
+              <a href="https://www.framer.com/motion/">Framer Motion</a>,{" "}
+              <a href="https://www.radix-ui.com/">Radix UI</a> &{" "}
               <a href="https://headlessui.com/">Headless UI</a>.
             </li>
           </ul>
