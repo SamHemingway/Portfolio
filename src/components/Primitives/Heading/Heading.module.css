@@ -12,6 +12,8 @@ h1 {
   background-clip: text;
   font-family: var(--ff-secondary);
   line-height: 1em;
+  /* small line height introduces clipping to hanging characters. This fixes it. */
+  padding-block-end: 0.1em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
