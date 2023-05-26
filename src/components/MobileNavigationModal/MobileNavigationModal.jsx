@@ -4,7 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import IconList from "../IconList";
 import Button from "../Button";
 import { motion } from "framer-motion";
-
+import { HashLink } from "react-router-hash-link";
 import { AnimationContext } from "../../contexts/AnimationProvider";
 
 function MobileNavigationModal({ toggleHandler, navLinks }) {
@@ -59,20 +59,19 @@ function MobileNavigationModal({ toggleHandler, navLinks }) {
   );
 }
 
-const NavLink = React.forwardRef(function ({ data, ...rest }, ref) {
+const NavLink = React.forwardRef(function ({ data, toggleHandler }, ref) {
   const { variants } = React.useContext(AnimationContext);
   return (
     <motion.li
       variants={variants.springRight}
       ref={ref}
-      {...rest}
     >
-      <a
-        href={data.id}
+      <HashLink
+        to={data.id}
         className={styles.navItem}
       >
         {data.text}
-      </a>
+      </HashLink>
     </motion.li>
   );
 });

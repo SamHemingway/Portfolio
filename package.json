@@ -20,6 +20,7 @@
     "react-calendly": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
+    "react-router-hash-link": "^2.4.3",
     "sort-by": "^1.2.0",
     "use-session-storage-state": "^18.1.1"
   },

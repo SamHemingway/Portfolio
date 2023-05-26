@@ -12,7 +12,11 @@ function HamburgerMenu({ menuIsOpen, setMenuIsOpen, navLinks }) {
 
   return (
     <>
-      <Dialog.Root key="navigationMenuMobile">
+      <Dialog.Root
+        key="navigationMenuMobile"
+        open={menuIsOpen}
+        onOpenChange={setMenuIsOpen}
+      >
         <HamburgerIcon
           menuIsOpen={menuIsOpen}
           toggleHandler={toggleMenu}
