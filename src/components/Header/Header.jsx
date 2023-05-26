@@ -8,6 +8,7 @@ import NavLinks from "../NavLinks/";
 import { motion } from "framer-motion";
 import { AnimationContext } from "../../contexts/AnimationProvider";
 import { PopupButton } from "react-calendly";
+import { useLocation } from "react-router-dom";
 
 function Header({ menuIsOpen, setMenuIsOpen }) {
   const { variants } = React.useContext(AnimationContext);

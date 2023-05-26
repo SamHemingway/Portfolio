@@ -5,6 +5,7 @@ import Projects from "../components/Projects";
 import FAQs from "../components/FAQs";
 import styles from "./Home.module.css";
 import Pills from "../components/Pills";
+import { useLocation } from "react-router-dom";
 
 function Home() {
   const skills = [
@@ -16,6 +17,8 @@ function Home() {
     "Framer Motion",
     "Styled Components",
   ];
+
+  scrollToLocation("instant");
 
   return (
     <>
@@ -61,3 +64,18 @@ function Home() {
 }
 
 export default Home;
+
+function scrollToLocation({ behaviour }) {
+  const scrolledRef = React.useRef(false);
+  const { hash } = useLocation();
+  React.useEffect(() => {
+    if (hash && !scrolledRef.current) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: behaviour });
+        scrolledRef.current = true;
+      }
+    }
+  });
+}

@@ -59,12 +59,13 @@ function MobileNavigationModal({ toggleHandler, navLinks }) {
   );
 }
 
-const NavLink = React.forwardRef(function ({ data }, ref) {
+const NavLink = React.forwardRef(function ({ data, ...rest }, ref) {
   const { variants } = React.useContext(AnimationContext);
   return (
     <motion.li
       variants={variants.springRight}
       ref={ref}
+      {...rest}
     >
       <a
         href={data.id}
@@ -76,7 +77,7 @@ const NavLink = React.forwardRef(function ({ data }, ref) {
   );
 });
 
-const Socials = React.forwardRef(function (props, ref) {
+const Socials = React.forwardRef(function (_, ref) {
   const { variants } = React.useContext(AnimationContext);
   return (
     <motion.li
@@ -92,7 +93,7 @@ const Socials = React.forwardRef(function (props, ref) {
 });
 
 const CTAButton = React.forwardRef(function (
-  { variant, stretch, children },
+  { variant, stretch, children, ...rest },
   ref
 ) {
   const { variants } = React.useContext(AnimationContext);
@@ -100,6 +101,7 @@ const CTAButton = React.forwardRef(function (
     <motion.li
       variants={variants.springRight}
       ref={ref}
+      {...rest}
     >
       <Button
         variant={variant}
