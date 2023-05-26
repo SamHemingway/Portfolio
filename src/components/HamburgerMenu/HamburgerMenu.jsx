@@ -6,13 +6,16 @@ import MobileNavigationModal from "../MobileNavigationModal/MobileNavigationModa
 
 function HamburgerMenu({ menuIsOpen, setMenuIsOpen, navLinks }) {
   function toggleMenu() {
-    const nextMenuIsOpen = !menuIsOpen;
-    setMenuIsOpen(nextMenuIsOpen);
+    setMenuIsOpen(!menuIsOpen);
   }
 
   return (
     <>
-      <Dialog.Root key="navigationMenuMobile">
+      <Dialog.Root
+        key="navigationMenuMobile"
+        open={menuIsOpen}
+        onOpenChange={setMenuIsOpen}
+      >
         <HamburgerIcon
           menuIsOpen={menuIsOpen}
           toggleHandler={toggleMenu}
@@ -21,7 +24,7 @@ function HamburgerMenu({ menuIsOpen, setMenuIsOpen, navLinks }) {
           <Dialog.Overlay className={styles.overlay} />
           <Dialog.Close
             onClick={toggleMenu}
-            className={styles.closeNav}
+            // className={styles.closeNav}
           >
             <span className="sr-only">Close Menu</span>
           </Dialog.Close>

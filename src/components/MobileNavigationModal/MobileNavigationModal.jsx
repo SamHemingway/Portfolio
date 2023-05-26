@@ -25,41 +25,25 @@ function MobileNavigationModal({ toggleHandler, navLinks }) {
       >
         {navLinks.map((data, index) => {
           return (
-            <Dialog.Close
-              asChild
-              className={styles.close}
-              onClick={toggleHandler}
+            <NavLink
+              data={data}
               key={index}
-            >
-              <NavLink data={data} />
-            </Dialog.Close>
+              toggleHandler={toggleHandler}
+            />
           );
         })}
-        <Dialog.Close
-          asChild
-          className={styles.close}
-          onClick={toggleHandler}
-        >
-          <Socials />
-        </Dialog.Close>
-        <Dialog.Close
-          asChild
-          className={styles.close}
-          onClick={toggleHandler}
-        >
-          <CTAButton
-            variant="cta"
-            stretch={true}
-          >
-            <a href="#hire">Let's talk</a>
-          </CTAButton>
-        </Dialog.Close>
+
+        <Socials />
+
+        <CTAButton stretch={true}>
+          <a href="#hire">Let's talk</a>
+        </CTAButton>
       </motion.ul>
     </Dialog.Content>
   );
 }
 
-const NavLink = React.forwardRef(function ({ data }, ref) {
+const NavLink = React.forwardRef(function ({ data, toggleHandler }, ref) {
   const { variants } = React.useContext(AnimationContext);
   return (
     <motion.li
@@ -69,6 +53,11 @@ const NavLink = React.forwardRef(function ({ data }, ref) {
       <a
         href={data.id}
         className={styles.navItem}
+        onClick={() => {
+          console.log(toggleHandler);
+          window.location.replace(data.id);
+          toggleHandler();
+        }}
       >
         {data.text}
       </a>
