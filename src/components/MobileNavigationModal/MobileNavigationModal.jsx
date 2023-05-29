@@ -6,6 +6,7 @@ import Button from "../Button";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 import { AnimationContext } from "../../contexts/AnimationProvider";
+import { flushSync } from "react-dom";
 
 function MobileNavigationModal({ toggleHandler, navLinks }) {
   const { variants } = React.useContext(AnimationContext);
@@ -31,7 +32,10 @@ function MobileNavigationModal({ toggleHandler, navLinks }) {
               onClick={toggleHandler}
               key={index}
             >
-              <NavLink data={data} />
+              <NavLink
+                data={data}
+                toggleHandler={toggleHandler}
+              />
             </Dialog.Close>
           );
         })}
@@ -67,6 +71,12 @@ const NavLink = React.forwardRef(function ({ data, toggleHandler }, ref) {
       ref={ref}
     >
       <HashLink
+        onClick={() => {
+          // flushSync required here: setting of state is interfering with HashLink's scrollIntoView
+          flushSync(() => {
+            toggleHandler();
+          });
+        }}
         to={data.id}
         className={styles.navItem}
       >
