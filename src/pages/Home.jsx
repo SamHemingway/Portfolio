@@ -24,7 +24,7 @@ function Home() {
     <>
       <Hero
         image
-        title="Hire a jnr frontend developer with startup soft skills"
+        title="Hire a frontend developer with startup soft skills"
       >
         <h2 className={styles.leadHeader}>
           <span role="text">
@@ -37,7 +37,7 @@ function Home() {
         >
           An ex-startup salesperson who realised that the most satisfying part
           of his last role was building <em>on-brand and fun</em> custom demo
-          instances with CSS to help my team try and land Fortune 100 companies.
+          instances with CSS to help my team land Fortune 100 companies.
         </p>
         <p
           role="text"
