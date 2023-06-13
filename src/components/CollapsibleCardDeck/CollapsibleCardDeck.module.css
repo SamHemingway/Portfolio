@@ -60,7 +60,8 @@
 .cardBody {
   color: var(--clr-secondary-100);
   background: var(--clr-primary-700);
-  padding-block: var(--space-xs);
+  padding-block-start: var(--space-xs);
+  padding-block-end: var(--space-m);
   padding-inline: var(--space-s);
   border-radius: 0 0 var(--rad-xs) var(--rad-xs);
   display: flex;
