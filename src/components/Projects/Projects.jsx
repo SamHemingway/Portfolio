@@ -6,13 +6,12 @@ import SlideIntoView from "../SlideIntoView";
 function Projects() {
   const projectData = [
     {
-      title: "Coming Soon",
-      content:
-        "<p>I know, there should be 3 projects in your portfolio before applying to jobs. I'm working on it!</p>",
-      id: "project-a",
-      heroImg: "underConstruction",
-      href: "#projects",
-      disabled: true,
+      title: "Dictionary",
+      content: "<p>A dictionary app pulling data from a web API.</p>",
+      id: "dictionary",
+      heroImg: "dictionary",
+      href: "/dictionary",
+      disabled: false,
     },
     {
       title: "Immortal Tracker",

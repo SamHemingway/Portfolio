@@ -9,7 +9,7 @@ import SlideIntoView from "../components/SlideIntoView";
 import scrollToTop from "../helpers/scrollToTop";
 
 export default function ImmortalTracker() {
-  const techStack = ["React", "Styled Components"];
+  const techStack = ["React", "Styled Components", "Framer Motion"];
 
   const features = [
     "Modal",

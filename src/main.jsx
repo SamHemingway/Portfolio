@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "/src/styles/globalStyles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ImmortalTracker from "./pages/ImmortalTracker";
+import Dictionary from "./pages/Dictionary";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Root from "./pages/Root";
@@ -28,6 +29,10 @@ export default function App() {
           <Route
             path="immortal-tracker"
             element={<ImmortalTracker />}
+          />
+          <Route
+            path="dictionary"
+            element={<Dictionary />}
           />
           <Route
             path="*"
