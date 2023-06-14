@@ -9,7 +9,12 @@ import SlideIntoView from "../components/SlideIntoView";
 import scrollToTop from "../helpers/scrollToTop";
 
 export default function Dictionary() {
-  const techStack = ["React", "Styled Components", "Framer Motion"];
+  const techStack = [
+    "React",
+    "Styled Components",
+    "Framer Motion",
+    "prop-types",
+  ];
   const features = [
     "Web API",
     "Debounced values",
