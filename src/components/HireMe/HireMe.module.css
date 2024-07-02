@@ -15,7 +15,7 @@
 }
 
 .heroWrapper {
-  margin-block-start: 6.5rem;
+  margin-block-start: 0;
   margin-block-end: calc(-1 * var(--hero-margin));
   display: flex;
   flex-direction: column-reverse;

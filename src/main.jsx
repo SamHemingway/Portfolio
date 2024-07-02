@@ -6,6 +6,7 @@ import ImmortalTracker from "./pages/ImmortalTracker";
 import Dictionary from "./pages/Dictionary";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
+import Experience from "./pages/Experience";
 import Root from "./pages/Root";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -33,6 +34,10 @@ export default function App() {
           <Route
             path="dictionary"
             element={<Dictionary />}
+          />
+          <Route
+            path="experience"
+            element={<Experience />}
           />
           <Route
             path="*"
