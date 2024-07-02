@@ -35,10 +35,16 @@
   gap: 1em;
 }
 
+.pillWrapper {
+  flex: 1;
+}
+
 .pillHeader {
   text-transform: uppercase;
   text-align: center;
   margin-block-end: 0;
+  font-family: revert;
+  font-size: 1.15em;
 }
 
 @media (min-width: 56.25rem) {

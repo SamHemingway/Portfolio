@@ -16,12 +16,12 @@ function WhySam() {
             with decades of experience:
           </p>
           <p>
-            “Sam, it's clear that you're a student of the craft (of sales) —
-            it'll take you far.”
+            “Sam, it's clear that you're a student of the craft of sales — it'll
+            take you far.”
           </p>
           <p>
-            If there's a better way to do something, I want to know about it. I
-            pride myself on learning it.
+            If there's a better way to do something, I pride myself on finding
+            it.
           </p>
         </>
       ),
@@ -52,16 +52,13 @@ function WhySam() {
       content: (
         <>
           <p>
-            When you're in the final stages of winning a deal against multiple
-            strong competitors, details matter.
+            Details matter. They're crucial to earning the trust of your
+            prospect or customer.
           </p>
+          <p>I work hard to do that by leaving no stone unturned.</p>
           <p>
-            The same goes for a web app — the design team works incredibly hard
-            to delight users so they come back.
-          </p>
-          <p>
-            It's those smaller details that have an outsized impact. I make sure
-            that they're covered.
+            Whether my customer is technically minded or not, I strive to prove
+            to them that I deserve their trust.
           </p>
         </>
       ),
@@ -72,14 +69,12 @@ function WhySam() {
       content: (
         <>
           <p>
-            I've worked on projects with multiple stakeholders who all have
-            their own agendas.
+            Any large scale project requires working with multiple stakeholders
+            across different teams with different priorities.
           </p>
           <p>
-            If you hire me, when the designer Slacks me to say the padding isn't
-            quite right in that component, I'll appreciate that I work with
-            people who take such pride in their work and make sure they feel
-            heard.
+            I'm experienced in communicating with others to ensure that everyone
+            feels heard and achieve their objectives.
           </p>
         </>
       ),

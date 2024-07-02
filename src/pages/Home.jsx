@@ -9,13 +9,12 @@ import { useLocation } from "react-router-dom";
 
 function Home() {
   const skills = [
-    "HTML5",
+    "SaaS Sales",
+    "Relationship Building",
+    "Project Management",
+    "Technical Demos",
     "JavaScript",
-    "CSS",
     "React",
-    "Vite",
-    "Framer Motion",
-    "Styled Components",
   ];
 
   scrollToLocation("instant");
@@ -24,35 +23,31 @@ function Home() {
     <>
       <Hero
         image
-        title="Hire a frontend developer with startup soft skills"
+        title="hire a sales pro with top technical skills"
       >
         <h2 className={styles.leadHeader}>
-          <span role="text">
-            It's <em>great</em> to meet you. I'm Sam!
-          </span>
+          <span role="text">It's great to meet you. I'm Sam!</span>
         </h2>
         <p
           role="text"
           className={styles.leadBody}
         >
-          An ex-startup salesperson who realised that the most satisfying part
-          of his last role was building <em>on-brand and fun</em> custom demo
-          instances with CSS to help my team land Fortune 100 companies.
+          An experienced startup salesperson with a knack for quickly learning
+          technical skills.
         </p>
         <p
           role="text"
           className={styles.leadBody}
         >
-          After getting laid off, I thought to myself: "That was fun. Let's
-          learn more".
+          For example, I taught myself web development. It seemed like fun. It
+          was.
         </p>
         <p
           role="text"
           className={styles.leadBody}
         >
-          Now, here we are: attempting a career change whilst most tech
-          companies are cutting down on staff, rather than adding them.{" "}
-          <em>Perfect timing</em> 👌
+          I'm looking for a role where I can combine my 2 loves: building deep
+          relationships with people, whilst satisfying my inner nerd.
         </p>
         <Pills content={skills} />
       </Hero>
